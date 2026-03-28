@@ -2,3 +2,34 @@
   This page shows up if there's no other error page to show
   If you define a +error.svelte on a route, that will be used instead
 -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>%sveltekit.status% %sveltekit.error.message%</title>
+	</head>
+  <style>
+    body {
+      background-color: #000000;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: sans-serif;
+      margin: auto;
+      height: 100%;
+      justify-content: center;
+    }
+    div > * {
+      margin: 0;
+      font-family: sans-serif;
+      color: #ffffff;
+    }
+  </style>
+	<body>
+    <div>
+      <h1>%sveltekit.status%</h1>
+      <p>%sveltekit.error.message%</p>
+    </div>
+	</body>
+</html>

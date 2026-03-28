@@ -43,6 +43,12 @@
 	{/each}
 </svelte:head>
 
+<style>
+	:global(html) {
+		overscroll-behavior: none;
+	}
+</style>
+
 {@html backgroundCSS}
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}

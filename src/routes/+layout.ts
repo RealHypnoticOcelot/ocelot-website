@@ -1,6 +1,7 @@
 import { dev } from '$app/environment';
 import type { LayoutLoad } from './$types';
 import favicon from '$lib/assets/favicon.svg';
+import banner from '$lib/assets/unremy_banner.png';
 
 export const prerender = false;
 // Prerender pages by default, can be overridden
@@ -22,21 +23,21 @@ export const load: LayoutLoad = ({ data, url }) => {
       { "charset": "utf-8" },
       { "name": "viewport", "content": "width=device-width, initial-scale=1" },
       { "name": "author", "content": "HypnoticOcelot" },
-      { "name": "description", "content": "I do things" }, // Long description
+      { "name": "description", "content": "Welcome to my personal website!" }, // Long description
       { "name": "keywords", "content": "HypnoticOcelot, Blog, Personal Site" },
       { "name": "theme-color", "content": "#000000" },
       { "name": "mobile-web-app-capable", "content": "yes" },
       { "name": "og:description", "property": "twitter:description", "content": "I do things" }, // Short description
       { "name": "og:type", "content": "website" },
-      { "name": "og:image", "property": "twitter:image", "content": favicon },
-      { "name": "og:image:alt", "property": "twitter:image:alt", "content": "THIS IS A PLACEHOLDERRR" },
+      { "name": "og:image", "property": "twitter:image", "content": banner },
+      { "name": "og:image:alt", "property": "twitter:image:alt", "content": "Sketches of HypnoticOcelot's fursona, done by Unremy" },
       { "name": "og:locale", "content": "en_US" }
     ],
     link: [
       { "rel": "icon", "href": favicon, "type": "image/svg+xml", "sizes": "any" },
       { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
       { "rel": "canonical", "href": url.origin + url.pathname }, // If you use href, queries like ?q=test would be included
-      { "rel": "license", "href": "https://example.com/"},
+      // { "rel": "license", "href": "https://example.com/"}, // TODO Decide how to license things
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
