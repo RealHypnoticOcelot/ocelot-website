@@ -13,8 +13,10 @@
 	const backgroundCSS = `
 	<style>
 		body {
-			background-image: url('${page.url.origin + "/background.svg?" + time.getTime()}');
+			background-image: url('${page.url.origin + "/background.svg?t=" + time.getTime()}');
 			background-size: 10vw;
+			backgorund-repeat: repeat;
+			background-color: #15e209;
 		}
 	</style>
 	`

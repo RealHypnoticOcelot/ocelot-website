@@ -6,7 +6,7 @@ export const prerender = false;
 // Prerender pages by default, can be overridden
 // by setting to false on a specific page/template
 
-export const csr = dev;
+export const csr = false;
 // Disabling JavaScript, means:
 // The webpage should work with HTML and CSS only.
 // <script> tags inside all Svelte components are removed.

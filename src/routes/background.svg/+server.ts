@@ -3,7 +3,7 @@ import { grid } from '$lib/utils/svg-grid';
 
 export async function GET() {
   const svgSize = 256;
-  const backgroundImages = import.meta.glob('$lib/assets/background-tiles/*', { eager: true, import: 'default' });
+  const backgroundImages = import.meta.glob('$lib/assets/background-tiles/*', { eager: true, import: 'default', query: '?inline' });
   const shuffledImages = grid(shuffle(Object.values(backgroundImages)), svgSize);
 	return new Response(
 		`
@@ -16,7 +16,7 @@ export async function GET() {
 	height="${svgSize}">
   <desc>Tile Background</desc>
 
-  <rect id="background" fill="#FFFFFF" x="0" ry="0" width="${svgSize}" height="${svgSize}"/>
+  <rect id="background" fill="#15e209" x="0" ry="0" width="${svgSize}" height="${svgSize}"/>
     ${shuffledImages}
   </svg>
     `.trim(),

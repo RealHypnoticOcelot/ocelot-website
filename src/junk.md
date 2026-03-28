@@ -53,3 +53,13 @@ const useHandwriting = $derived(page.data?.useHandwriting ?? false)
       <image {...svgInfo} />
     {/each}
 </svg>
+
+`layout.server.ts`
+import type { LayoutServerLoad } from './$types';
+
+export const load: LayoutServerLoad = async ({fetch}) => {
+  const imageTiles = await fetch("/background.svg")
+  return {
+    backgroundSVG: await imageTiles.text()
+  };
+};
