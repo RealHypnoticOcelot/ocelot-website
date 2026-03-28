@@ -13,6 +13,7 @@ export const grid = (array: Array<any>, size: number): string => {
     "preserveAspectRatio": "xMidYMid slice"
   }));
 
+  // Below takes the array and converts it into image objects for the SVG
   function toHtmlAttributes(attributes: Record<string, any>): string {
   return Object.entries(attributes)
     .map(([key, value]) => `${key}="${value}"`)
