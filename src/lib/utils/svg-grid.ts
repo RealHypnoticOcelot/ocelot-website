@@ -1,7 +1,9 @@
 export const grid = (array: Array<any>, size: number): string => {
-  while (Math.sqrt(array.length) * Math.sqrt(array.length) !== array.length) {
-    array.pop() // Make sure the amount of items in the array is a perfect square, e.g. 4, 9, 16
-  };
+  while (true) {
+    const root = Math.sqrt(array.length)
+    if (Number.isInteger(root)) break // Make sure the amount of items in the array is a perfect square, e.g. 4, 9, 16
+    array.pop()
+  }
   const dimension = Math.sqrt(array.length); // e.g. 2
   const tile_size = size / dimension; // e.g. 1024 / 2 = 512 
   const gridArray = array.map((image: string, i) => ({

@@ -4,6 +4,7 @@ import { grid } from '$lib/utils/svg-grid';
 export async function GET() {
   const svgSize = 256;
   const backgroundImages = import.meta.glob('$lib/assets/background-tiles/*', { eager: true, import: 'default', query: '?inline' });
+	// Must be inline(data URIs), because external requests aren't loaded inside of SVGs
   const shuffledImages = grid(shuffle(Object.values(backgroundImages)), svgSize);
 	return new Response(
 		`

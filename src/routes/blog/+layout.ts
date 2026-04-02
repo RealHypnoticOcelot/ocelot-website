@@ -1,9 +1,10 @@
-import type { LayoutLoad } from '../$types';
+import type { LayoutLoad, LayoutParentData } from '../$types';
 
-export const load: LayoutLoad = ({ url }) => {
+export const load: LayoutLoad = async({ parent, url }) => {
+  const parentData = await parent();
   return {
+    ...parentData,
     metadata: {
-      title: "Testing",
       meta: [
         { "name": "og:type", "content": "article" }
       ],
@@ -17,6 +18,6 @@ export const load: LayoutLoad = ({ url }) => {
           "sizes": "any"
         }
       ]
-    }
+    },
   }
 };

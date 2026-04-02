@@ -14,4 +14,4 @@ export const shuffle = (array: Array<any>): Array<any> => {
   }
 
   return array;
-}
+} // Fisher-Yates shuffle algorithm, from https://stackoverflow.com/a/2450976

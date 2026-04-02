@@ -1,5 +1,6 @@
 import { dev } from '$app/environment';
 import type { LayoutLoad } from './$types';
+import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred my own solution, I wanted a deep merge function and didn't want to make it myself
 import favicon from '$lib/assets/favicon.svg';
 import banner from '$lib/assets/unremy_banner.png';
 
@@ -7,7 +8,7 @@ export const prerender = false;
 // Prerender pages by default, can be overridden
 // by setting to false on a specific page/template
 
-export const csr = false;
+export const csr = dev;
 // Disabling JavaScript, means:
 // The webpage should work with HTML and CSS only.
 // <script> tags inside all Svelte components are removed.
@@ -17,45 +18,42 @@ export const csr = false;
 // You can set csr = dev in order to enable it during development.
 
 export const load: LayoutLoad = ({ data, url }) => {
-  let defaultMetadata = {
+  const baseTags = defineBaseMetaTags({
     title: "HypnoticOcelot",
-    meta: [
-      { "charset": "utf-8" },
-      { "name": "viewport", "content": "width=device-width, initial-scale=1" },
+    description: "Welcome to my personal website!", // Long description
+    keywords: ["HypnoticOcelot", "Blog", "Personal Site"],
+    canonical: new URL(url.pathname, url.origin).href, // creates a cleaned up URL (without hashes or query params) from your current URL
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_US',
+      title: 'HypnoticOcelot',
+      description: 'I do things', // Short description
+      siteName: 'HypnoticOcelot',
+      images: [
+        {
+          url: banner,
+          alt: "Sketches of HypnoticOcelot's fursona, done by Unremy"
+        }
+      ]
+    },
+    additionalMetaTags: [
       { "name": "author", "content": "HypnoticOcelot" },
-      { "name": "description", "content": "Welcome to my personal website!" }, // Long description
-      { "name": "keywords", "content": "HypnoticOcelot, Blog, Personal Site" },
       { "name": "theme-color", "content": "#000000" },
-      { "name": "mobile-web-app-capable", "content": "yes" },
-      { "name": "og:description", "property": "twitter:description", "content": "I do things" }, // Short description
-      { "name": "og:type", "content": "website" },
-      { "name": "og:image", "property": "twitter:image", "content": banner },
-      { "name": "og:image:alt", "property": "twitter:image:alt", "content": "Sketches of HypnoticOcelot's fursona, done by Unremy" },
-      { "name": "og:locale", "content": "en_US" }
+      { "name": "mobile-web-app-capable", "content": "yes" }
     ],
-    link: [
+    additionalLinkTags: [
       { "rel": "icon", "href": favicon, "type": "image/svg+xml", "sizes": "any" },
       { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
-      { "rel": "canonical", "href": url.origin + url.pathname }, // If you use href, queries like ?q=test would be included
-      // { "rel": "license", "href": "https://example.com/"}, // TODO Decide how to license things
+      { "rel": "license", "href": new URL(url.origin).href + "license"}, // TODO Decide how to license things
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
       { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" }
-      // TODO: Add Dublin Core tags
     ]
-	};
-  defaultMetadata.meta.push(
-    { "name": "og:title", "property": "twitter:title", "content": defaultMetadata.title },
-    { "name": "og:site_name", "content": defaultMetadata.meta.find(element => element.name == "author")?.content ?? "" },
-    { "name": "og:url", "content": defaultMetadata.link.find(element => element.rel == "canonical")?.href ?? "" },
-  );
+  });
   return {
-    metadata: {
-      ...defaultMetadata,
-      // @ts-ignore to ignore the following error in the IDE, deal with later
-      ...(data?.metadata ?? {}) // Only exists when children define it
-    },
-    ...data // Make sure not to discard the server data
+    ...baseTags,
+    ...data // If this isn't included, you lose data from server.ts
   };
 };

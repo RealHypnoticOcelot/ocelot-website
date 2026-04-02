@@ -7,9 +7,11 @@ Welcome to my page, please excuse the mess!
 -->
 <html lang="en">
 	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover"> <!-- Preload links that the user hovers over, just reduces load times slightly -->
-		<div style="display: contents">%sveltekit.body%</div>
+		<div style="display: contents">%sveltekit.body%</div> <!-- We need a div because of https://github.com/sveltejs/kit/issues/6244#issuecomment-1226600661 -->
 	</body>
 </html>
