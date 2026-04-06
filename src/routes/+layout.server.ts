@@ -1,5 +1,7 @@
 import type { LayoutServerLoad } from './$types';
 import { fetchSVG } from '$lib/utils/fetchsvg'; 
+import { icons, info } from '@iconify-json/simple-icons';
+import { svgToURI } from '$lib/utils/svgToURI';
 
 const nav_links = [
 	{
@@ -25,15 +27,17 @@ const nav_links = [
   {
     title: "RSS Feed",
     slug: 'feed',
-    icon: fetchSVG("rss", "1cap", "1cap")
+    icon: fetchSVG(icons, "rss", info, "1cap", "1cap")
   }
 ];
 
-export const load: LayoutServerLoad = async ({fetch}) => {
+export const load: LayoutServerLoad = async ({fetch, locals}) => {
   const imageTiles = await fetch("/background.svg")
   return {
     nav_links,
-    backgroundSVG: "data:image/svg+xml;utf8," + encodeURIComponent(await imageTiles.text()), // SVG to data URI
+		theme: locals.theme,
+    useHandwriting: locals.useHandwriting,
+    backgroundSVG: svgToURI(await imageTiles.text()), // SVG to data URI
   }; // Keep in mind that the SVGs include a number of embedded images, which are not automatically resized.
   // As a rule of thumb, keep your images at a resolution of 512x512 or below.
   // More complex images will take longer to load, and this sort of thing can't be cached!

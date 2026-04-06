@@ -1,15 +1,16 @@
 {
   "devDependencies": {
+    "@iconify-json/ri": "^1.2.10",
     "@iconify-json/simple-icons": "^1.2.76",
     "@iconify/utils": "^3.1.0",
-    "@sveltejs/kit": "^2.55.0",
+    "@sveltejs/kit": "^2.56.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "bun2nix": "^2.0.8",
     "svelte": "^5.55.1",
     "svelte-adapter-bun": "^1.0.1",
     "svelte-meta-tags": "^4.5.2",
     "typescript": "^5.9.3",
-    "vite": "^8.0.3"
+    "vite": "^8.0.5"
   },
   "private": true,
   "scripts": {

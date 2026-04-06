@@ -1,8 +1,8 @@
-import { icons } from '@iconify-json/simple-icons';
 import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
+import type { IconifyJSON, IconifyInfo } from '@iconify-json/simple-icons';
 
-export const fetchSVG = (iconName: string, height: string = "1em", width: string = "1em", extraAttributes: Record<string, string> = {}): string => {
-  const iconData = getIconData(icons, iconName);
+export const fetchSVG = (iconSet: IconifyJSON, iconName: string, setInfo: IconifyInfo, height: string = "1em", width: string = "1em", extraAttributes: Record<string, string> = {}): string => {
+  const iconData = getIconData(iconSet, iconName);
   if (!iconData) {
     throw new Error(`Icon "${iconName}" is missing`);
   }
@@ -14,12 +14,18 @@ export const fetchSVG = (iconName: string, height: string = "1em", width: string
   //   "aria-hidden": "true",
   //   "alt": "A kitten frolicking in a field"
   // }
+  const licenseInfo = {
+    "data-license": setInfo.license.title,
+    ...(setInfo.license?.url && {
+      "data-license-url": setInfo.license.url // Add URL if it exists
+    }),
+  }
   const svgHTML = iconToHTML(replaceIDs(renderData.body), {
       ...extraAttributes,
-      ...renderData.attributes
+      ...renderData.attributes,
+      ...licenseInfo
     }
   );
-  console.log(renderData)
 
   return svgHTML;
 }

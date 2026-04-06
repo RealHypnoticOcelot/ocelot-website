@@ -2,21 +2,25 @@
 	import { page } from '$app/state';
 	import ToggleSwitch from './ToggleSwitch.svelte';
 	import logo from "$lib/assets/favicon.svg";
+	import { fetchSVG } from '$lib/utils/fetchsvg';
+	import { icons, info }  from '@iconify-json/ri';
+	let { theme, useHandwriting } = $props();
 </script>
 
 <style>
 	header {
 		display: grid;
-		grid-template-columns: min-content auto min-content;
-		background-color: var(--bg-primary);
+		grid-template-columns: min-content 3fr auto;
+		background-color: var(--default-background);
 		align-items: center;
 		justify-items: center;
-		padding: 1em 2em 1em 2em;
-		margin: 0.5em auto 0.5em auto;
+		margin: var(--default-margin);
 		width: var(--content-width);
+		min-height: 5vh;
+		padding: var(--default-padding);
 	}
 	header img {
-		height: 5vh; /* Header image determines the entire header's size; maybe there's a better way to do this, but this works! */
+		height: 5em;
 	}
 	header > * {
 		display: flex;
@@ -24,7 +28,7 @@
 		padding: 0.5em;
 	}
 	nav a {
-		padding: 1vw;
+		padding: 1em;
 		text-decoration: none;
 	}
 	a :global {
@@ -41,6 +45,14 @@
 	}
 	#skip:not(:focus) {
 		transform: translateY(-10em);
+	}
+	fieldset {
+		justify-content: center;
+	}
+	@media print {
+		fieldset {
+			display: none;
+		}
 	}
 </style>
 
@@ -62,5 +74,19 @@
 			</a>
 		{/each}
 	</nav>
-	<ToggleSwitch></ToggleSwitch>
+	<fieldset>
+		<ToggleSwitch
+			checkedType="darkTheme"
+			checked={theme}
+			offContent={fetchSVG(icons, 'sun-fill', info)}
+			onContent={fetchSVG(icons, 'moon-fill', info)}
+		></ToggleSwitch>
+		<ToggleSwitch
+			checkedType="useHandwriting"
+			checked={useHandwriting}
+			offContent="Aa"
+			onContent="Aa"
+			--onFont="hypnoticocelot"
+		></ToggleSwitch>
+	</fieldset>
 </header>
