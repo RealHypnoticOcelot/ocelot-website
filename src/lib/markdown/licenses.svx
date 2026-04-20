@@ -1,0 +1,14 @@
+---
+title: "Licenses"
+---
+# {title}
+***
+- The text on this site is licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by/4.0/legalcode), unless specified otherwise. Quotations do not fall under this license; they're used under an exception to copyright, or under a separate license.
+
+- The art/images on this site are copyrighted by their creators and used with consent, a license agreement, or an exception to copyright, unless specified otherwise.
+
+- The icons used on this site are under various licenses; please refer to the `data-license` and `data-license-url` attributes on these icons for specific information.
+
+- This site's code is licensed under [MIT](https://opensource.org/license/MIT), unless specified otherwise.
+
+- The *HypnoticOcelot* font is licensed under [GPL-3.0-only](https://opensource.org/license/GPL-3.0) with the [font exception](https://www.gnu.org/licenses/gpl-faq.html#FontException).

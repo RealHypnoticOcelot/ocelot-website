@@ -6,7 +6,7 @@ Everything you need to build a Svelte project, powered by [`sv`](https://github.
 
 ```sh
 # create a new project
-bunx install --dev @my-dependency/here
+bun install --dev @my-dependency/here
 ```
 
 ## Developing

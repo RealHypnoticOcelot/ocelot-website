@@ -11,13 +11,6 @@
 </script>
 
 <style>
-  .error-container {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
   .error {
     display: flex;
     flex-direction: column;
@@ -25,16 +18,30 @@
     padding: 2em;
     scale: 1.5;
   }
-  .error > * {
+  .error * {
     margin: 0;
+    font-family: var(--default-font);
+    color: var(--color-primary);
+  }
+  .error button, .error input {
+    cursor: pointer;
+    border: none;
+    width: 10em;
+    color: var(--bg-primary);
+    background-color: var(--color-primary);
+    margin: 0.25em;
   }
 </style>
 
 {@html bodyFixer}
 
-<div class="error-container">
+<main>
   <div class="error">
     <h1>{page.status}</h1>
     <p>{page.error?.message ?? "Unknown Error"}</p>
+    <form action="/">
+        <input type="submit" value="Home" />
+    </form>
+    <button onclick={() => history.back()}>Go Back</button>
   </div>
-</div>
+</main>

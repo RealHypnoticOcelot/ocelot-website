@@ -1,0 +1,23 @@
+---
+title: "Hi!"
+---
+# {title}
+Nice to meet you(or maybe you already know who I am)! Well, where do I begin? I'm **HypnoticOcelot** online, but most people just call me Hypno. In any case, welcome to my little corner of the internet!
+## About Me
+***
+I like long walks on the beach, the summer rain, and these things too:
+- Writing
+- The Open Internet
+- Open Standards/Interoperability
+- Linux
+
+You know, that sort of thing! I'm a university student currently on track to study law, and hopefully make some positive impact on digital rights legislation in America.
+
+*The views expressed on this website are mine and mine alone, unless expressly stated.*
+## Contact
+***
+You can contact me through email; in an attempt to avoid LLM scrapers from collecting my email too easily, here it is encoded with B64:
+```
+cmVhbGh5cG5vdGljb2NlbG90QHByb3Rvbm1haWwuY29tCg==
+```
+Feel free to also contact me through any of the platforms listed in the footer(I'm more active on real-time communication platforms)! If I don't respond within 2-3 days, try and reach out to me another way.

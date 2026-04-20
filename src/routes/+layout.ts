@@ -1,5 +1,6 @@
 import { dev } from '$app/environment';
 import type { LayoutLoad } from './$types';
+import { siteDescription, siteTitle } from '$lib/config';
 import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred my own solution, I wanted a deep merge function and didn't want to make it myself
 import favicon from '$lib/assets/favicon.svg';
 import banner from '$lib/assets/unremy_banner.png';
@@ -8,7 +9,7 @@ export const prerender = false;
 // Prerender pages by default, can be overridden
 // by setting to false on a specific page/template
 
-export const csr = dev;
+export const csr = true;
 // Disabling JavaScript, means:
 // The webpage should work with HTML and CSS only.
 // <script> tags inside all Svelte components are removed.
@@ -17,19 +18,18 @@ export const csr = dev;
 // Hot Module Replacement (HMR) will be disabled.
 // You can set csr = dev in order to enable it during development.
 
-export const load: LayoutLoad = ({ data, url }) => {
+export const load: LayoutLoad = async ({ data, url }) => {
   const baseTags = defineBaseMetaTags({
-    title: "HypnoticOcelot",
-    description: "Welcome to my personal website!", // Long description
+    titleTemplate: `%s | ${siteTitle}`,
+    description: siteDescription, // Long description
     keywords: ["HypnoticOcelot", "Blog", "Personal Site"],
     canonical: new URL(url.pathname, url.origin).href, // creates a cleaned up URL (without hashes or query params) from your current URL
     openGraph: {
-      type: 'website',
+      type: "website",
       url: new URL(url.pathname, url.origin).href,
       locale: 'en_US',
-      title: 'HypnoticOcelot',
       description: 'I do things', // Short description
-      siteName: 'HypnoticOcelot',
+      siteName: siteTitle,
       images: [
         {
           url: banner,
@@ -45,7 +45,7 @@ export const load: LayoutLoad = ({ data, url }) => {
     additionalLinkTags: [
       { "rel": "icon", "href": favicon, "type": "image/svg+xml", "sizes": "any" },
       { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
-      { "rel": "license", "href": new URL(url.origin).href + "license"}, // TODO Decide how to license things
+      { "rel": "license", "href": new URL(url.origin).href + "licenses"},
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
@@ -54,6 +54,6 @@ export const load: LayoutLoad = ({ data, url }) => {
   });
   return {
     ...baseTags,
-    ...data // If this isn't included, you lose data from server.ts
+    ...data, // If this isn't included, you lose data from server.ts
   };
 };

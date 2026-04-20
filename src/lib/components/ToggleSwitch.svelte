@@ -8,7 +8,6 @@
 <style>
   form {
     line-height: calc(var(--size, 4em) / 4);
-    transition: 0.2s;
   }
   span {
     cursor: pointer;
@@ -24,7 +23,7 @@
     background-color: var(--bg-secondary);
     height: calc(var(--size, 4em) / 4);
     width: calc(var(--size, 4em) / 4);
-    padding: calc(var(--size, 4em) / 4); /* Should be 2x width/height */
+    padding: calc(var(--size, 4em) / 4);
     display: grid;
     align-content: center;
     justify-content: center;

@@ -1,0 +1,87 @@
+:root {
+  /*
+    bg-primary: The background for the main content of the site, e.g. headers and articles
+    bg-secondary: A secondary background, should have slightly less 
+    color-primary: The color of things like text
+    color-secondary: A secondary color for things like text, should have less contrast than bg-primary than color-primary
+    color-tertiary: A tertiary color for things like text, should have less contrast with bg-primary than color-secondary 
+    color-highlight: An accent color for the site!
+    color-shadow: The color for a shadow on the site, should be an RGBA color of <20% opacity
+  */
+  color-scheme: light dark;
+  --bg-primary: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); 
+  --bg-secondary: light-dark(rgb(245, 245, 245), rgb(10, 10, 10));
+  --color-primary: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));
+  --color-secondary: light-dark(rgb(80, 80, 80), rgb(175, 175, 175));
+  --color-tertiary: light-dark(rgb(160, 160, 160), rgb(95, 95, 95));
+  --color-highlight: light-dark(#0C6407, #15E209);
+  --color-shadow: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  --content-width: min(60em, 100vw);
+  --default-margin: 0.5em auto 0.5em auto;
+  --default-padding: 1em 2em 1em 2em;
+  --default-background: color(from var(--bg-primary) srgb r g b  / 0.9);
+  --default-font: "Liberation Sans", "Helvetica Neue", "Noto Sans", "Open Sans", sans-serif;
+  --box-shadow: 0.1em 0.1em 0.5em var(--color-shadow);
+  scrollbar-color: var(--color-highlight) var(--bg-primary);
+}
+main {
+  margin: var(--default-margin);
+  padding: var(--default-padding);
+  background-color: var(--default-background);
+  color: var(--color-primary);
+  width: var(--content-width);
+}
+body {
+  margin: 0;
+  font-family: var(--default-font);
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+ul {
+  list-style-type: square;
+}
+a {
+  color: var(--color-highlight);
+  white-space: nowrap;
+}
+code { 
+  font-family: "Liberation Mono", "Courier New", "Noto Mono", "DejaVu Sans Mono", monospace;
+}
+pre[class*=language-] {
+  color:var(--bg-primary);
+  background-color:var(--color-primary);
+  padding: 1em;
+}
+pre[class*=language-] > code {
+  white-space: pre-wrap;
+}
+article > * {
+  line-height: 1.5em;
+}
+body > div > * {
+  box-sizing: border-box;
+}
+@media print {
+  @page { 
+    margin: 0;
+  }
+  :root {
+    --default-margin: 0.5em 0 0.5em 0;
+    --content-width: 100vw;
+    --box-shadow: none;
+  }
+  body {
+    display: grid;
+    justify-content: center;
+  }
+  body > div > * {
+    border: none;
+    overflow: hidden;
+  }
+  main a:after {
+    content: " ("attr(href)")";
+    white-space: normal;
+  }
+}

@@ -1,4 +1,5 @@
 import adapter from 'svelte-adapter-bun';
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +12,11 @@ const config = {
 	vitePlugin: {
 		dynamicCompileOptions: ({ filename }) =>
 			filename.includes('node_modules') ? undefined : { runes: true }
-	}
+	},
+	extensions: ['.svelte', '.svx'],
+	preprocess: mdsvex({
+		smartypants: false
+	})
 };
 
 export default config;

@@ -1,5 +1,5 @@
 import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
-import type { IconifyJSON, IconifyInfo } from '@iconify-json/simple-icons';
+import type { IconifyJSON, IconifyInfo } from '@iconify-json/simple-icons'; // Can be imported from any @iconify-json package, I think
 
 export const fetchSVG = (iconSet: IconifyJSON, iconName: string, setInfo: IconifyInfo, height: string = "1em", width: string = "1em", extraAttributes: Record<string, string> = {}): string => {
   const iconData = getIconData(iconSet, iconName);
@@ -10,10 +10,10 @@ export const fetchSVG = (iconSet: IconifyJSON, iconName: string, setInfo: Iconif
     height: height,
     width: width,
   });
-  // const exampleExtraAttributes = {
+  // const extraAttributes = {
   //   "aria-hidden": "true",
   //   "alt": "A kitten frolicking in a field"
-  // }
+  // } // Example
   const licenseInfo = {
     "data-license": setInfo.license.title,
     ...(setInfo.license?.url && {
@@ -23,7 +23,8 @@ export const fetchSVG = (iconSet: IconifyJSON, iconName: string, setInfo: Iconif
   const svgHTML = iconToHTML(replaceIDs(renderData.body), {
       ...extraAttributes,
       ...renderData.attributes,
-      ...licenseInfo
+      ...licenseInfo,
+      "aria-label": iconName
     }
   );
 

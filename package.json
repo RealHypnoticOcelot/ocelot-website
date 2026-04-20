@@ -1,16 +1,17 @@
 {
   "devDependencies": {
     "@iconify-json/ri": "^1.2.10",
-    "@iconify-json/simple-icons": "^1.2.76",
+    "@iconify-json/simple-icons": "^1.2.79",
     "@iconify/utils": "^3.1.0",
-    "@sveltejs/kit": "^2.56.1",
+    "@sveltejs/kit": "^2.57.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "bun2nix": "^2.0.8",
-    "svelte": "^5.55.1",
+    "mdsvex": "^0.12.7",
+    "svelte": "^5.55.4",
     "svelte-adapter-bun": "^1.0.1",
-    "svelte-meta-tags": "^4.5.2",
+    "svelte-meta-tags": "^4.6.0",
     "typescript": "^5.9.3",
-    "vite": "^8.0.5"
+    "vite": "^8.0.9"
   },
   "private": true,
   "scripts": {
@@ -20,8 +21,5 @@
     "prepare": "svelte-kit sync || echo ''",
     "postinstall": "bun2nix -o bun.nix"
   },
-  "type": "module",
-  "dependencies": {
-    "@iconify-svelte/simple-icons": "^1.0.22"
-  }
+  "type": "module"
 }

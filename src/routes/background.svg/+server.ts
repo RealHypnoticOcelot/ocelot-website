@@ -17,7 +17,7 @@ export async function GET() {
 	height="${svgSize}">
   <desc>Tile Background</desc>
 
-  <rect id="background" fill="#15e209" x="0" ry="0" width="${svgSize}" height="${svgSize}"/>
+  <rect id="background" fill="transparent" x="0" ry="0" width="${svgSize}" height="${svgSize}"/>
     ${shuffledImages}
   </svg>
     `.trim(),

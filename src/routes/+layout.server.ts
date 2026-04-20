@@ -12,31 +12,67 @@ const nav_links = [
 		title: 'Blog',
 		slug: 'blog',
 	},
+	{ 
+		title: 'Uses',
+		slug: 'uses',
+	},
+  {
+    title: "Feed",
+    slug: 'feed.xml',
+    icon: fetchSVG(icons, "rss", info, "1cap", "1cap"),
+		target: "_blank"
+  }
+];
+
+const footer_buttons = [
 	{
-		title: 'About',
-		slug: 'about'
+		title: "GitHub",
+		url: "https://github.com/RealHypnoticOcelot/",
+		icon: fetchSVG(icons, "github", info)
+	},
+	{
+		title: "Bluesky",
+		url: "https://bsky.app/profile/ocelot.lol",
+		icon: fetchSVG(icons, "bluesky", info)
+	},
+	{
+		title: "Fluxer",
+		url: "https://fluxer.gg/Kpo6rpCn",
+		icon: fetchSVG(icons, "fluxer", info)
+	},
+	{
+		title: "Discord",
+		url: "https://discord.gg/ADMajgMsDX",
+		icon: fetchSVG(icons, "discord", info)
+	},
+	{
+		title: "Steam",
+		url: "https://steamcommunity.com/id/HypnoticOcelot",
+		icon: fetchSVG(icons, "steam", info)
+	}
+]
+
+const footer_links = [
+	{
+		title: 'Privacy Policy',
+		slug: 'privacy',
 	},
 	{
 		title: 'Licenses',
 		slug: 'licenses'
-	},
-	{
-		title: 'Contact',
-		slug: 'contact'
-	},
-  {
-    title: "RSS Feed",
-    slug: 'feed',
-    icon: fetchSVG(icons, "rss", info, "1cap", "1cap")
-  }
+	}
 ];
 
 export const load: LayoutServerLoad = async ({fetch, locals}) => {
-  const imageTiles = await fetch("/background.svg")
+  const imageTiles = await fetch("/background.svg");
   return {
     nav_links,
-		theme: locals.theme,
-    useHandwriting: locals.useHandwriting,
+		footer_buttons,
+		footer_links,
+		// @ts-expect-error
+		darkTheme: locals.theme, // From hooks.server.ts
+		// @ts-expect-error
+    useHandwriting: locals.useHandwriting, // From hooks.server.ts
     backgroundSVG: svgToURI(await imageTiles.text()), // SVG to data URI
   }; // Keep in mind that the SVGs include a number of embedded images, which are not automatically resized.
   // As a rule of thumb, keep your images at a resolution of 512x512 or below.

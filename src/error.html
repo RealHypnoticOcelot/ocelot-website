@@ -12,7 +12,7 @@
       overscroll-behavior: none;
     }
     body {
-      background-color: #000;
+      background-color: light-dark(#ffffff, #000000);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -30,16 +30,28 @@
       padding: 2em;
       scale: 1.5;
     }
-    .error > * {
+    .error * {
       margin: 0;
       font-family: sans-serif;
-      color: #ffffff;
+      color: light-dark(#000000, #ffffff);
+    }
+    .error button, .error input {
+      cursor: pointer;
+      border: none;
+      width: 10em;
+      color: light-dark(#ffffff, #000000);
+      background-color: light-dark(#000000, #ffffff);
+      margin: 0.25em;
     }
   </style>
 	<body>
     <div class="error">
       <h1>%sveltekit.status%</h1>
       <p>%sveltekit.error.message%</p>
+      <form action="/">
+          <input type="submit" value="Home" />
+      </form>
+      <button onclick="history.back()">Go Back</button>
     </div>
 	</body>
 </html>
