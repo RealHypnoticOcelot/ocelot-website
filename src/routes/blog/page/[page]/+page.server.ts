@@ -4,18 +4,17 @@ import { error, redirect, isRedirect } from "@sveltejs/kit";
 
 export const load = async ({params}) => {
   try {
-    if (isNaN(parseInt(params.page))) {
+    const pageNumber = parseInt(params.page ?? '');
+    if (isNaN(pageNumber) || (pageNumber == 0 || pageNumber < -1)) {
       redirect(301, `/blog/page/1`)
     }
-    const posts = await getBlogPosts(parseInt(params.page) || 1); 
-    if (posts.data.length < 1) {
-      redirect(301, `/blog/page/${Math.ceil(posts.totalPosts / defaultMaxPosts)}`)
+    const posts = await getBlogPosts(Math.abs(pageNumber) || 1, pageNumber == -1 ? -1 : defaultMaxPosts); 
+    if (pageNumber > posts.lastPage && pageNumber != -1) {
+      redirect(301, `/blog/page/${posts.lastPage}`)
     }
     return {
       posts,
-      isFirstPage: parseInt(params.page) == 1,
-      isLastPage: (posts.totalPosts / defaultMaxPosts) <= parseInt(params.page),
-      pageNumber: parseInt(params.page)
+      pageNumber
     };
   } catch (exception) {
     if (isRedirect(exception)) {

@@ -1,6 +1,6 @@
 import { dev } from '$app/environment';
 import type { LayoutLoad } from './$types';
-import { siteDescription, siteTitle } from '$lib/config';
+import { siteAuthor, siteDescription, siteShortDescription, siteTitle } from '$lib/config';
 import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred my own solution, I wanted a deep merge function and didn't want to make it myself
 import favicon from '$lib/assets/favicon.svg';
 import banner from '$lib/assets/unremy_banner.png';
@@ -18,6 +18,7 @@ export const csr = true;
 // Hot Module Replacement (HMR) will be disabled.
 // You can set csr = dev in order to enable it during development.
 
+
 export const load: LayoutLoad = async ({ data, url }) => {
   const baseTags = defineBaseMetaTags({
     titleTemplate: `%s | ${siteTitle}`,
@@ -28,7 +29,7 @@ export const load: LayoutLoad = async ({ data, url }) => {
       type: "website",
       url: new URL(url.pathname, url.origin).href,
       locale: 'en_US',
-      description: 'I do things', // Short description
+      description: siteShortDescription, // Short description
       siteName: siteTitle,
       images: [
         {
@@ -38,18 +39,19 @@ export const load: LayoutLoad = async ({ data, url }) => {
       ]
     },
     additionalMetaTags: [
-      { "name": "author", "content": "HypnoticOcelot" },
+      { "name": "author", "content": siteAuthor },
       { "name": "theme-color", "content": "#000000" },
       { "name": "mobile-web-app-capable", "content": "yes" }
     ],
     additionalLinkTags: [
       { "rel": "icon", "href": favicon, "type": "image/svg+xml", "sizes": "any" },
       { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
-      { "rel": "license", "href": new URL(url.origin).href + "licenses"},
+      { "rel": "license", "href": new URL("licenses", url.origin).href},
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
-      { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" }
+      { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" },
+      { "rel": "alternate", "href": new URL("feed.xml", url.origin).href }
     ]
   });
   return {

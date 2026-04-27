@@ -1,17 +1,17 @@
 <script>
   let { data } = $props();
   import { formatDate } from '$lib/utils/formatDate';
-  import { siteAuthor } from '$lib/config.js';
+  import { siteAuthor, siteTextLicense, siteTitle } from '$lib/config.js';
 </script>
 
 <style>
-  header {
+  hgroup {
     display: grid;
     grid-template-columns: auto;
     align-items: end;
     text-align: left;
   }
-  header > * {
+  hgroup > * {
 		margin-top: 0.5em;
     margin-bottom: 0;
   }
@@ -21,10 +21,10 @@
   footer {
     text-align: right;
   }
-  .articleBody {
+  div[itemprop=articleBody] {
     margin: 1em auto 1em auto;
   }
-  :global(.articleBody > *) {
+  :global(div[itemprop=articleBody] > *) {
     margin-top: 0;
     margin-bottom: 0.5em;
   }
@@ -32,16 +32,16 @@
 
 <main id="content">
   <article>
-    <header>
-      <h1>{data.meta.title}</h1>
-      <p>By <strong>{data.meta.author ?? siteAuthor}</strong>{#if data.meta.datetime}, posted <em><time datetime={data.meta.datetime}>{formatDate(data.meta.datetime, true).dateString}</time></em>{/if}{#if data.meta.updated}, last updated <em><time datetime={data.meta.updated}>{formatDate(data.meta.updated, true).dateString}</time></em>{/if}
+    <hgroup>
+      <h1 itemprop="headline">{data.meta?.title ?? "[NO TITLE]"}</h1>
+      <p>By <strong itemprop="author">{data.meta?.author ?? siteAuthor}</strong>{#if data.meta?.datetime ?? 0 != 0}, posted <em><time itemprop="datePublished" datetime={data.meta.datetime}>{formatDate(data.meta.datetime, true).dateString}</time></em>{/if}{#if data.meta?.updated ?? 0 != 0}, last updated <em><time datetime={data.meta.updated}>{formatDate(data.meta.updated, true).dateString}</time></em>{/if}
       </p>
-    </header>
+    </hgroup>
     <hr>
-    <div class="articleBody" itemprop="articleBody">
+    <div itemprop="articleBody">
       <data.content />
     </div>
   </article>
   <hr>
-  <footer>This page's text is licensed under {data.meta.license ?? "CC-BY-4.0"}; the rest may not be. See <a href="/licenses">Licenses</a> for more information.</footer>
+  <footer>This page's text is licensed under {data.meta?.license ?? siteTextLicense}; the rest may not be. See <a href="/licenses">Licenses</a> for more information.</footer>
 </main>

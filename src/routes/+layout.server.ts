@@ -3,7 +3,7 @@ import { fetchSVG } from '$lib/utils/fetchsvg';
 import { icons, info } from '@iconify-json/simple-icons';
 import { svgToURI } from '$lib/utils/svgToURI';
 
-const nav_links = [
+const navLinks = [
 	{
 		title: 'Home',
 		slug: '',
@@ -16,15 +16,19 @@ const nav_links = [
 		title: 'Uses',
 		slug: 'uses',
 	},
+	{
+		title: '88x31',
+		slug: '88x31'
+	},
   {
     title: "Feed",
-    slug: 'feed.xml',
+    slug: 'feed',
     icon: fetchSVG(icons, "rss", info, "1cap", "1cap"),
 		target: "_blank"
   }
 ];
 
-const footer_buttons = [
+const footerButtons = [
 	{
 		title: "GitHub",
 		url: "https://github.com/RealHypnoticOcelot/",
@@ -52,7 +56,7 @@ const footer_buttons = [
 	}
 ]
 
-const footer_links = [
+const footerLinks = [
 	{
 		title: 'Privacy Policy',
 		slug: 'privacy',
@@ -66,12 +70,10 @@ const footer_links = [
 export const load: LayoutServerLoad = async ({fetch, locals}) => {
   const imageTiles = await fetch("/background.svg");
   return {
-    nav_links,
-		footer_buttons,
-		footer_links,
-		// @ts-expect-error
+    navLinks,
+		footerButtons,
+		footerLinks,
 		darkTheme: locals.theme, // From hooks.server.ts
-		// @ts-expect-error
     useHandwriting: locals.useHandwriting, // From hooks.server.ts
     backgroundSVG: svgToURI(await imageTiles.text()), // SVG to data URI
   }; // Keep in mind that the SVGs include a number of embedded images, which are not automatically resized.

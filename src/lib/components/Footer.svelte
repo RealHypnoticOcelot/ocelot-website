@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	let { footerButtons, footerLinks } = $props();
 </script>
 
 <style>
@@ -49,7 +50,7 @@
 
 <footer>
 	<nav id="socialbuttons">
-		{#each page.data.footer_buttons as link}
+		{#each footerButtons as link}
 				<a
 					href="{link.url}"
 					target="_blank"
@@ -60,7 +61,7 @@
 		{/each}
 	</nav>
 	<nav id="footerlinks">
-		{#each page.data.footer_links as link}
+		{#each footerLinks as link}
 			<a
 				href="/{link.slug}"
 				aria-current={page.url.pathname.startsWith(`/${link.slug}`) ? 'page' : null}

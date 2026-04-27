@@ -6,35 +6,27 @@
 -->
 <script>
 	let { data, children } = $props();
-	let { darkTheme, useHandwriting } = $derived(data);
+	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks } = $derived(data);
+  const fullbodyImages = Object.values(import.meta.glob('$lib/assets/fullbody-images/*', { eager: true, import: 'default' }));
+	const fullbodyImage = String(fullbodyImages[Math.floor(Math.random() * fullbodyImages.length)]);
 	import { page } from '$app/state';
 	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import Header from '$lib/components/Header.svelte';
+	import PrintHeader from '$lib/components/PrintHeader.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import hypnofont from "$lib/assets/Hypnoticocelot-Regular.otf"
-	import rdr_image from "$lib/assets/rdr_cropped.png";
+	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.otf"
 	import '$lib/global.css';
 	const backgroundCSS = `
 	<style>
-		body {
-			background: 
-				repeating-linear-gradient(
-					var(--color-shadow),
-					var(--color-shadow)
-				) fixed,
-				url("${page.data?.backgroundSVG ?? ''}") fixed repeat 0 0 / 10vw,
-				var(--color-highlight);
+		:root {
+			--tile-background: url("${page.data.backgroundSVG ?? ''}")
 		}
 		@font-face {
-			font-family: "hypnoticocelot";
-			src: ${hypnofont};
+			font-family: "Hypnoticocelot";
+			src: local('Hypnoticocelot'),
+				url(${hypnoFont});
 			font-weight: normal;
 			font-style: normal;
-		}
-		@media print {
-			body {
-				background-attachment: scroll;
-			}
 		}
 	</style>
 	`
@@ -43,9 +35,8 @@
 </script>
 
 <MetaTags {...metaTags} />
-<svelte:head>
-	<link rel="preload" as="image" href={rdr_image}>
-</svelte:head>
+
+<PrintHeader />
 
 {@html backgroundCSS}
 
@@ -57,9 +48,12 @@
 		color-scheme: light;
 	}
 	:global(:root[usehandwriting='true']) {
-		--default-font: 'hypnoticocelot';
+		--default-font: 'Hypnoticocelot';
 	}
-	.rdr {
+	:global(:root[usehandwriting='true'] ul) {
+		list-style-type: circle;
+	}
+	.fullbodyImage {
 		position: fixed;
 		max-height: 100vh;
 		bottom: 0;
@@ -68,14 +62,13 @@
 		max-width: 50vw;
 	}
 	@media print {
-		.rdr {
+		.fullbodyImage {
 			display: none;
 		}
 	}
 </style>
-
-<Header {darkTheme} {useHandwriting} />
+<Header {darkTheme} {useHandwriting} {navLinks}/>
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}
-<Footer/>
-<img class="rdr" src={rdr_image} alt="HypnoticOcelot's fursona; art by RamDaRam(람다람)">
+<Footer {footerButtons} {footerLinks} />
+<img class="fullbodyImage" src={fullbodyImage} alt="HypnoticOcelot's fursona; art by RamDaRam(람다람)">

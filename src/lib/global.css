@@ -6,7 +6,7 @@
     color-secondary: A secondary color for things like text, should have less contrast than bg-primary than color-primary
     color-tertiary: A tertiary color for things like text, should have less contrast with bg-primary than color-secondary 
     color-highlight: An accent color for the site!
-    color-shadow: The color for a shadow on the site, should be an RGBA color of <20% opacity
+    color-shadow: The color for a shadow on the site, should be an RGB color of <20% opacity
   */
   color-scheme: light dark;
   --bg-primary: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); 
@@ -15,7 +15,7 @@
   --color-secondary: light-dark(rgb(80, 80, 80), rgb(175, 175, 175));
   --color-tertiary: light-dark(rgb(160, 160, 160), rgb(95, 95, 95));
   --color-highlight: light-dark(#0C6407, #15E209);
-  --color-shadow: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  --color-shadow: light-dark(rgb(0, 0, 0, 0.2), rgb(255, 255, 255, 0.2));
   --content-width: min(60em, 100vw);
   --default-margin: 0.5em auto 0.5em auto;
   --default-padding: 1em 2em 1em 2em;
@@ -31,9 +31,26 @@ main {
   color: var(--color-primary);
   width: var(--content-width);
 }
-body {
+@media (max-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or smaller */
+  :root {
+    --background-size: 20vh;
+  }
+}
+@media (min-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or larger */
+  :root {
+    --background-size: 10vw;
+  }
+}
+body, feed {
   margin: 0;
   font-family: var(--default-font);
+  background: 
+    repeating-linear-gradient(
+      var(--color-shadow),
+      var(--color-shadow)
+    ) fixed,
+    var(--tile-background) fixed repeat 0 0 / var(--background-size),
+    var(--color-highlight);
 }
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0.5em;
@@ -41,6 +58,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 ul {
   list-style-type: square;
+}
+ul ul {
+  padding-left: 1em;
 }
 a {
   color: var(--color-highlight);
@@ -64,17 +84,20 @@ body > div > * {
   box-sizing: border-box;
 }
 @media print {
-  @page { 
+  /* @page { 
     margin: 0;
-  }
+  } */
+  /* Makes the background look nice, but not viable for printing onto actual paper */
   :root {
-    --default-margin: 0.5em 0 0.5em 0;
+    --default-margin: 0.5em auto 0.5em auto;
     --content-width: 100vw;
     --box-shadow: none;
   }
-  body {
-    display: grid;
+  body, feed {
     justify-content: center;
+    box-sizing: content-box;
+    break-inside: avoid;
+    background: none;
   }
   body > div > * {
     border: none;
@@ -82,6 +105,6 @@ body > div > * {
   }
   main a:after {
     content: " ("attr(href)")";
-    white-space: normal;
+    white-space: normal; /* If not set, content overflows off the page */
   }
 }

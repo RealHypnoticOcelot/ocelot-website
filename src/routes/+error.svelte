@@ -16,7 +16,6 @@
     flex-direction: column;
     align-items: center;
     padding: 2em;
-    scale: 1.5;
   }
   .error * {
     margin: 0;

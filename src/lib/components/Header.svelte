@@ -4,7 +4,7 @@
 	import logo from "$lib/assets/favicon.svg";
 	import { fetchSVG } from '$lib/utils/fetchsvg';
 	import { icons, info }  from '@iconify-json/ri';
-	let { darkTheme, useHandwriting } = $props();
+	let { darkTheme, useHandwriting, navLinks } = $props();
 </script>
 
 <style>
@@ -16,10 +16,11 @@
 		justify-items: center;
 		margin: var(--default-margin);
 		width: var(--content-width);
-		min-height: 5vh;
 		padding: var(--default-padding);
+		/* position: sticky;
+		top: 0; */
 	}
-	header img {
+	[itemprop=logo] {
 		height: 5em;
 	}
 	header > * {
@@ -73,10 +74,11 @@
 		<img
 			src={logo} alt="HypnoticOcelot Logo"
 			aria-current={page.route.id == "/" ? 'page' : null}
+			itemprop="logo"
 		/>
 	</a>
 	<nav>
-		{#each page.data.nav_links as link}
+		{#each navLinks as link}
 			<a
 				href="/{link.slug}"
 				aria-current={page.url.pathname.startsWith(`/${link.slug}`) ? 'page' : null}

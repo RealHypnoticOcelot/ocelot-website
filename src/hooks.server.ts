@@ -1,15 +1,14 @@
 import type { Handle } from '@sveltejs/kit';
+import { svgToURI } from '$lib/utils/svgToURI';
 
 const extraHeaders = {
   'x-clacks-overhead': 'GNU Terry Pratchett'
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
-  const theme = event.cookies.get('darkTheme') || false;
-  const useHandwriting = event.cookies.get('useHandwriting') || false;
-  // @ts-expect-error
+  const theme = event.cookies.get('darkTheme') || 'false';
+  const useHandwriting = event.cookies.get('useHandwriting') || 'false';
   event.locals.theme = theme;
-  // @ts-expect-error
   event.locals.useHandwriting = useHandwriting;
 	const response = await resolve(event, { 
     preload: ({ type }) => type === 'font'  || type === 'js' || type === 'css',

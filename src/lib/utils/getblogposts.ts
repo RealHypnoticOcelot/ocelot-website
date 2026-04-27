@@ -1,4 +1,4 @@
-import { defaultMaxPosts } from "$lib/config";
+import { defaultMaxPosts, siteAuthor, siteDescription, siteTitle } from "$lib/config";
 import { render } from "svelte/server";
 import { toLongSlug } from "./toLongSlug";
 import type { Component } from "svelte";
@@ -21,6 +21,9 @@ export type PostFile = {
 export type BlogPosts = {
   data: Array<any>;
   totalPosts: number;
+  isFirstPage: boolean;
+  lastPage: number;
+  isLastPage: boolean;
 }
 
 export const getBlogPosts = async ( offset: number = 1, maxPosts: number = defaultMaxPosts, includeContent: boolean = false): Promise<BlogPosts> => {
@@ -43,8 +46,12 @@ export const getBlogPosts = async ( offset: number = 1, maxPosts: number = defau
   if (maxPosts && maxPosts < sortedPosts.length && maxPosts != -1) {
 		sortedPosts = sortedPosts.slice(0, maxPosts)
   };
+  const lastPage = Math.ceil(posts.length / maxPosts);
   return {
     data: sortedPosts,
-    totalPosts: posts.length
+    totalPosts: posts.length,
+    isFirstPage: offset === 1 || offset < 1,
+    lastPage,
+    isLastPage: offset === lastPage || lastPage < 1
   }
 };

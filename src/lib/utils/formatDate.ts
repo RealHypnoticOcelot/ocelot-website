@@ -5,7 +5,7 @@ export type DateFormat = {
   dateString: string;
 };
 
-export const formatDate = (dateInput: string, local: boolean = false): DateFormat => {
+export const formatDate = (dateInput: string | number, local: boolean = false): DateFormat => {
   try {
     const dateObject = new Date(dateInput);
     const dateOptions: Intl.DateTimeFormatOptions = {
@@ -24,7 +24,7 @@ export const formatDate = (dateInput: string, local: boolean = false): DateForma
       )
     );
     const YMD = `${parts.year}/${parts.month}/${parts.day}`;
-    const HM = (parts.hour != "12" && parts.minutes != "00") ? `${parts.hour}:${parts.minute} ${parts.dayPeriod} ${parts.timeZoneName}` : "";
+    const HM = !(parts.hour == "12" && parts.minute == "00") ? `${parts.hour}:${parts.minute} ${parts.dayPeriod} ${parts.timeZoneName}` : "";
     return {
       date: dateObject,
       YMD: YMD,
