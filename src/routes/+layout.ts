@@ -18,7 +18,6 @@ export const csr = true;
 // Hot Module Replacement (HMR) will be disabled.
 // You can set csr = dev in order to enable it during development.
 
-
 export const load: LayoutLoad = async ({ data, url }) => {
   const baseTags = defineBaseMetaTags({
     titleTemplate: `%s | ${siteTitle}`,
@@ -51,7 +50,7 @@ export const load: LayoutLoad = async ({ data, url }) => {
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
       { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" },
-      { "rel": "alternate", "href": new URL("feed.xml", url.origin).href }
+      { "rel": "alternate", "href": new URL("feed", url.origin).href }
     ]
   });
   return {

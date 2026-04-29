@@ -9,11 +9,11 @@
 
 <style>
 	header {
-		display: grid;
-		grid-template-columns: min-content 4fr minmax(min-content, 2fr);
+		display: flex;
+		flex-wrap: wrap;
 		background-color: var(--default-background);
 		align-items: center;
-		justify-items: center;
+		justify-content: center;
 		margin: var(--default-margin);
 		width: var(--content-width);
 		padding: var(--default-padding);
@@ -27,6 +27,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0.5em;
+	}
+	nav {
+		flex-grow: 1;
+		justify-content: center;
 	}
 	nav a {
 		padding: 1em;
@@ -77,11 +81,11 @@
 			itemprop="logo"
 		/>
 	</a>
-	<nav>
+	<nav data-sveltekit-keepfocus>
 		{#each navLinks as link}
 			<a
-				href="/{link.slug}"
-				aria-current={page.url.pathname.startsWith(`/${link.slug}`) ? 'page' : null}
+				href="/{link.slug ?? link.title.toLowerCase()}"
+				aria-current={page.url.pathname.startsWith(`/${link.slug ?? link.title.toLowerCase()}`) ? 'page' : null}
 				target={link.target}
 			>
 				{link.title ?? ""}

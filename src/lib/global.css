@@ -24,6 +24,11 @@
   --box-shadow: 0.1em 0.1em 0.5em var(--color-shadow);
   scrollbar-color: var(--color-highlight) var(--bg-primary);
 }
+@counter-style handwriting-circle {
+  system: cyclic;
+  symbols: "\2022";
+  suffix: " ";
+}
 main {
   margin: var(--default-margin);
   padding: var(--default-padding);
@@ -45,10 +50,6 @@ body, feed {
   margin: 0;
   font-family: var(--default-font);
   background: 
-    repeating-linear-gradient(
-      var(--color-shadow),
-      var(--color-shadow)
-    ) fixed,
     var(--tile-background) fixed repeat 0 0 / var(--background-size),
     var(--color-highlight);
 }
@@ -68,14 +69,24 @@ a {
 }
 code { 
   font-family: "Liberation Mono", "Courier New", "Noto Mono", "DejaVu Sans Mono", monospace;
+  font-weight: normal;
 }
 pre[class*=language-] {
   color:var(--bg-primary);
-  background-color:var(--color-primary);
+  background-color: var(--color-primary);
   padding: 1em;
 }
 pre[class*=language-] > code {
   white-space: pre-wrap;
+}
+blockquote {
+  margin: 0;
+  color:var(--bg-primary);
+  background-color: var(--color-secondary);
+  padding: 1em;
+}
+blockquote > * {
+  margin: 0;
 }
 article > * {
   line-height: 1.5em;

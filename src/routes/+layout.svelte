@@ -5,10 +5,6 @@
 	This is a special page, not available at /layout
 -->
 <script>
-	let { data, children } = $props();
-	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks } = $derived(data);
-  const fullbodyImages = Object.values(import.meta.glob('$lib/assets/fullbody-images/*', { eager: true, import: 'default' }));
-	const fullbodyImage = String(fullbodyImages[Math.floor(Math.random() * fullbodyImages.length)]);
 	import { page } from '$app/state';
 	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import Header from '$lib/components/Header.svelte';
@@ -16,14 +12,18 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.otf"
 	import '$lib/global.css';
+	let { data, children } = $props();
+	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
+	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
 	const backgroundCSS = `
 	<style>
 		:root {
-			--tile-background: url("${page.data.backgroundSVG ?? ''}")
+			--tile-background: url("${page.data.backgroundSVG ?? ''}");
 		}
 		@font-face {
 			font-family: "Hypnoticocelot";
-			src: local('Hypnoticocelot'),
+			src:
+				local('Hypnoticocelot'),
 				url(${hypnoFont});
 			font-weight: normal;
 			font-style: normal;
@@ -49,9 +49,10 @@
 	}
 	:global(:root[usehandwriting='true']) {
 		--default-font: 'Hypnoticocelot';
+		font-weight: bold;
 	}
 	:global(:root[usehandwriting='true'] ul) {
-		list-style-type: circle;
+		list-style-type: handwriting-circle;
 	}
 	.fullbodyImage {
 		position: fixed;
@@ -70,5 +71,5 @@
 <Header {darkTheme} {useHandwriting} {navLinks}/>
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}
-<Footer {footerButtons} {footerLinks} />
-<img class="fullbodyImage" src={fullbodyImage} alt="HypnoticOcelot's fursona; art by RamDaRam(람다람)">
+<Footer {footerButtons} {footerLinks} {footerText} />
+<img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + fullbodyImage.substring(fullbodyImage.lastIndexOf('/') + 1, fullbodyImage.lastIndexOf('.')) }>

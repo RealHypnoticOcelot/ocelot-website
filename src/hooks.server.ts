@@ -6,12 +6,13 @@ const extraHeaders = {
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
-  const theme = event.cookies.get('darkTheme') || 'false';
+  const theme = event.cookies.get('darkTheme') || 'false'; // We just use false by default,
+  // because as far as I know, there's no way to have the toggle switch match the browser's preferred theme
   const useHandwriting = event.cookies.get('useHandwriting') || 'false';
   event.locals.theme = theme;
   event.locals.useHandwriting = useHandwriting;
 	const response = await resolve(event, { 
-    preload: ({ type }) => type === 'font'  || type === 'js' || type === 'css',
+    preload: ({ type }) => type === 'js' || type === 'css',
     transformPageChunk: ({ html }) => {
       html = html.replace('darktheme=""', `darktheme="${theme}"`);
       html = html.replace('usehandwriting=""', `usehandwriting="${useHandwriting}"`);

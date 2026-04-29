@@ -2,6 +2,8 @@ import type { LayoutServerLoad } from './$types';
 import { fetchSVG } from '$lib/utils/fetchsvg'; 
 import { icons, info } from '@iconify-json/simple-icons';
 import { svgToURI } from '$lib/utils/svgToURI';
+import { shuffle } from '$lib/utils/shuffle';
+import { footerText } from '$lib/config';
 
 const navLinks = [
 	{
@@ -10,19 +12,15 @@ const navLinks = [
 	},
 	{ 
 		title: 'Blog',
-		slug: 'blog',
 	},
 	{ 
 		title: 'Uses',
-		slug: 'uses',
 	},
 	{
 		title: '88x31',
-		slug: '88x31'
 	},
   {
     title: "Feed",
-    slug: 'feed',
     icon: fetchSVG(icons, "rss", info, "1cap", "1cap"),
 		target: "_blank"
   }
@@ -62,17 +60,20 @@ const footerLinks = [
 		slug: 'privacy',
 	},
 	{
-		title: 'Licenses',
-		slug: 'licenses'
+		title: 'Licenses'
 	}
 ];
 
 export const load: LayoutServerLoad = async ({fetch, locals}) => {
   const imageTiles = await fetch("/background.svg");
+  let fullbodyImages = Object.values(import.meta.glob('$lib/assets/fullbody-images/*', { eager: true, import: 'default' }));
+	let fullbodyImage = String(fullbodyImages[Math.floor(Math.random() * fullbodyImages.length)]);
   return {
     navLinks,
 		footerButtons,
 		footerLinks,
+		footerText: shuffle(footerText)[0],
+		fullbodyImage,
 		darkTheme: locals.theme, // From hooks.server.ts
     useHandwriting: locals.useHandwriting, // From hooks.server.ts
     backgroundSVG: svgToURI(await imageTiles.text()), // SVG to data URI

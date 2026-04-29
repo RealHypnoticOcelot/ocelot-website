@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	let { footerButtons, footerLinks } = $props();
+	let { footerButtons, footerLinks, footerText } = $props();
 </script>
 
 <style>
@@ -41,6 +41,13 @@
 	#footerlinks > *:not(:last-child) {
 		border-right: 0.1em solid var(--color-highlight);
 	}
+	cite {
+		display: none;
+		font-style: normal;
+	}
+	#footerText {
+		display: block;
+	}
   @media print {
     footer {
       display: none;
@@ -60,11 +67,11 @@
 				</a>
 		{/each}
 	</nav>
-	<nav id="footerlinks">
+	<nav id="footerlinks" data-sveltekit-keepfocus>
 		{#each footerLinks as link}
 			<a
-				href="/{link.slug}"
-				aria-current={page.url.pathname.startsWith(`/${link.slug}`) ? 'page' : null}
+				href="/{link.slug ?? link.title.toLowerCase()}"
+				aria-current={page.url.pathname.startsWith(`/${link.slug ?? link.title.toLowerCase()}`) ? 'page' : null}
 			>
 				{link.title ?? ""}
 				{#if link.icon}
@@ -73,4 +80,13 @@
 			</a>
 		{/each}
 	</nav>
+	<p id="footerText">
+		{#if footerText}
+			{#if footerText.attribution}
+				<em><q title={"From " + footerText.attribution}>{footerText.text}</q></em><cite>{" - " + footerText.attribution}</cite>
+			{:else}
+				<em>{footerText.text}</em>
+			{/if}
+		{/if}
+	</p>
 </footer>
