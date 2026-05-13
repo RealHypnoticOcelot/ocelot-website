@@ -41,17 +41,17 @@
 			vertical-align: baseline;
 		}
 	}
+	#skip:not(:focus), legend {
+		position: absolute;
+		transform: translateY(-100em);
+		background-color: var(--bg-primary);
+	}
 	#skip {
 		position: fixed;
 		top: 0;
 		left: 0;
 		background-color: var(--bg-primary);
 		transform: translatey(0);
-	}
-	#skip:not(:focus), legend {
-		position: absolute;
-		transform: translateY(-100em);
-		background-color: var(--bg-primary);
 	}
 	fieldset {
 		justify-content: center;

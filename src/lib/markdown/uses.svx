@@ -3,7 +3,7 @@ title: "Uses"
 ---
 # {title}
 ***
-- The laptop I use every day is a [Lenovo P14s Gen 6 (AMD)](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-p-series-laptops/thinkpad-p14s-gen-6-type-21ql-21qm/21ql/21qlcto1ww/) running [NixOS](https://nixos.org/)(if you want to view my config, it's hosted [here](https://github.com/RealHypnoticOcelot/hypnix)).
+- The laptop I use every day is a [Lenovo P14s Gen 6 (AMD)](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-p-series-laptops/thinkpad-p14s-gen-6-type-21ql-21qm/21ql/21qlcto1ww/) running [NixOS](https://nixos.org/) with [KDE Plasma](https://kde.org/plasma-desktop)(if you want to view my config, it's hosted [here](https://github.com/RealHypnoticOcelot/hypnix)).
 - I use [LibreWolf](https://librewolf.net/) to browse the internet, and I use [LibRedirect](https://libredirect.github.io/) to automatically redirect frontends when I need to view social media pages.
 - For searching online, I use [StartPage Search](https://www.startpage.com/), though I've been considering a susbcription to [Kagi Search](https://kagi.com/).
 - I prefer to use web applications over installable applications whenever possible.

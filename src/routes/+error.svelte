@@ -1,13 +1,6 @@
 <!-- Still inherits from +layout.svelte! -->
 <script>
 	import { page } from '$app/state';
-	const bodyFixer = `
-	<style>
-		body {
-      margin: 0;
-		}
-	</style>
-	`
 </script>
 
 <style>
@@ -31,8 +24,6 @@
     margin: 0.25em;
   }
 </style>
-
-{@html bodyFixer}
 
 <main>
   <div class="error">

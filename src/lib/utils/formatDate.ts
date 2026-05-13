@@ -5,9 +5,10 @@ export type DateFormat = {
   dateString: string;
 };
 
-export const formatDate = (dateInput: string | number, local: boolean = false): DateFormat => {
+export const formatDate = (dateInput: string | number | undefined, local: boolean = false): DateFormat => {
   try {
-    const dateObject = new Date(dateInput);
+    const dateObject = new Date(dateInput ?? ''); // If you plan on passing Unix timestamps, make sure to use milliseconds and not seconds.
+    // You can convert from seconds to milliseconds by multiplying by 1000 (or just adding three zeroes at the end)
     const dateOptions: Intl.DateTimeFormatOptions = {
       year: "numeric",
       month: "2-digit",

@@ -1,5 +1,6 @@
 <script>
     import { page } from '$app/state';
+    import { getFileName } from '$lib/utils/getFileName.js';
 
   let { data } = $props();
   const linkButtons = import.meta.glob('$lib/assets/88x31/*', { eager: true, import: 'default' });
@@ -41,7 +42,7 @@
   <div class="buttons">
   <!-- A bit crude, but it works! -->
   {#each Object.keys(linkButtons) as button}
-    {@const buttonFQDN = button.substring(button.lastIndexOf('/') + 1, button.lastIndexOf('.')).replace("__", ".")}
+    {@const buttonFQDN = getFileName(button).replace("__", ".")}
     {#if buttonFQDN.startsWith('@')}
       <a href={ 'https://' + buttonFQDN.substring(1)} id={buttonFQDN.substring(1)}>
         <img src={linkButtons[button] ? linkButtons[button].toString() : "/"} alt={buttonFQDN.substring(1)}>

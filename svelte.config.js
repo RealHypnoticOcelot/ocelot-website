@@ -1,4 +1,5 @@
 import adapter from 'svelte-adapter-bun';
+import relativeImages from "mdsvex-relative-images";
 import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,10 +16,9 @@ const config = {
 	},
 	extensions: ['.svelte', '.svx'],
 	preprocess: mdsvex({
-		smartypants: false
+		smartypants: false,
+		remarkPlugins: [relativeImages],
 	}),
-	trustedOrigins: ['*']
-
 };
 
 export default config;

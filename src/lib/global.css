@@ -23,6 +23,7 @@
   --default-font: "Liberation Sans", "Helvetica Neue", "Noto Sans", "Open Sans", sans-serif;
   --box-shadow: 0.1em 0.1em 0.5em var(--color-shadow);
   scrollbar-color: var(--color-highlight) var(--bg-primary);
+  line-height: 1.5em;
 }
 @counter-style handwriting-circle {
   system: cyclic;
@@ -46,11 +47,18 @@ main {
     --background-size: 10vw;
   }
 }
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --default-background: var(--bg-primary);
+  }
+}
 body, feed {
-  margin: 0;
+  margin: auto;
+  width: var(--content-width);
   font-family: var(--default-font);
   background: 
     var(--tile-background) fixed repeat 0 0 / var(--background-size),
+    repeating-linear-gradient(color(from var(--bg-primary) srgb r g b  / 0.1)) fixed,
     var(--color-highlight);
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -80,19 +88,20 @@ pre[class*=language-] > code {
   white-space: pre-wrap;
 }
 blockquote {
-  margin: 0;
+  margin: auto;
   color:var(--bg-primary);
   background-color: var(--color-secondary);
   padding: 1em;
+  font-style: italic;
 }
 blockquote > * {
   margin: 0;
 }
-article > * {
-  line-height: 1.5em;
-}
 body > div > * {
   box-sizing: border-box;
+}
+article img {
+  width: 100%;
 }
 @media print {
   /* @page { 

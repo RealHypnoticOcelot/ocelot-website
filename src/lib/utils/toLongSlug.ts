@@ -1,8 +1,8 @@
-import { formatDate, type DateFormat } from "./formatDate";
+import { formatDate } from "./formatDate";
+import type { PostMetadata } from "./getblogposts";
+import { getFileName } from "./getFileName";
 
-export const toLongSlug = async (filename: string): Promise<string> => {
-  let postData = await import(`$lib/markdown/blog/${filename}.svx`);
-  postData = postData.metadata;
-  const longSlug = "blog/" + ((postData?.datetime ?? 0) ? formatDate(postData.datetime).YMD + "/" : "") + filename;
+export const toLongSlug = (filename: string, postData: PostMetadata): string => {
+  const longSlug = "blog/" + ((postData.datetime || 0) ? formatDate(postData.datetime ?? 0).YMD + "/" : "") + (postData.slug ?? getFileName(filename));
   return longSlug;
 }

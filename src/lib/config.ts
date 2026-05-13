@@ -12,7 +12,7 @@ export const footerText = [
 		text: 'Made by a human, for humans'
 	},
 	{
-		text: 'Curiosity can kill I suppose; but apathy is lethal',
+		text: 'Curiosity can kill I suppose; but apathy is lethal.',
 		attribution: "American McGee's Alice (2000)"
 	},
 	{
@@ -46,5 +46,9 @@ export const footerText = [
   {
     text: 'Let us be thankful we have commerce. Buy more. Buy more now. Buy. And be happy.',
     attribution: "THX 1138 (1971)"
-  }
+  },
+	{
+		text: 'Are you waiting to wake up?',
+		attribution: "STOMACH BOOK - Are You Waiting? (2024)"
+	}
 ]

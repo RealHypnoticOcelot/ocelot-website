@@ -11,6 +11,7 @@ export type PostMetadata = {
   license?: string;
   updated?: string; // The date showing the last time a post was updated
   hiddentime?: string; // A date that shouldn't be shown to the user, but is used when sorting the blog posts by date
+  slug?: string;
 }
 
 export type PostFile = {
@@ -26,18 +27,18 @@ export type BlogPosts = {
   isLastPage: boolean;
 }
 
+const paths: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/**", { eager: true });
 export const getBlogPosts = async ( offset: number = 1, maxPosts: number = defaultMaxPosts, includeContent: boolean = false): Promise<BlogPosts> => {
-  const paths: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/*", { eager: true });
-  const posts: Array<any> = await Promise.all( Object.entries(paths)
-    .map(async ([path, file]) => {
+  const posts: Array<any> = Object.entries(paths)
+    .map(([path, file]) => {
       const postData: PostMetadata = file.metadata;
-      const postSlug = await toLongSlug((path.split("/").pop() ?? "post").replace(`.svx`, ""));
+      const postSlug = toLongSlug(path, postData);
       return {
         content: includeContent ? render(file.default) : undefined,
         ...postData,
         slug: postSlug,
       };
-    }));
+    });
   let sortedPosts = posts.sort((a, b) => new Date(b.hiddentime ?? b.updated ?? b.datetime ?? 0).getTime() - new Date(a.hiddentime ?? a.updated ?? a.datetime ?? 0).getTime());
   if (offset) {
     sortedPosts = sortedPosts.slice((offset - 1 ) * maxPosts)

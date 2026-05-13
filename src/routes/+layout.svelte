@@ -10,8 +10,9 @@
 	import Header from '$lib/components/Header.svelte';
 	import PrintHeader from '$lib/components/PrintHeader.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.otf"
+	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.woff2"
 	import '$lib/global.css';
+    import { getFileName } from '$lib/utils/getFileName.js';
 	let { data, children } = $props();
 	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
@@ -24,7 +25,7 @@
 			font-family: "Hypnoticocelot";
 			src:
 				local('Hypnoticocelot'),
-				url(${hypnoFont});
+				url("${hypnoFont}");
 			font-weight: normal;
 			font-style: normal;
 		}
@@ -72,4 +73,4 @@
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}
 <Footer {footerButtons} {footerLinks} {footerText} />
-<img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + fullbodyImage.substring(fullbodyImage.lastIndexOf('/') + 1, fullbodyImage.lastIndexOf('.')) }>
+<img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }>

@@ -11,10 +11,6 @@
     align-items: end;
     text-align: left;
   }
-  hgroup > * {
-		margin-top: 0.5em;
-    margin-bottom: 0;
-  }
   time {
     color: var(--color-secondary);
   }

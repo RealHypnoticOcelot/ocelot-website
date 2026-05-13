@@ -3,7 +3,7 @@ import type { LayoutLoad } from './$types';
 import { siteAuthor, siteDescription, siteShortDescription, siteTitle } from '$lib/config';
 import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred my own solution, I wanted a deep merge function and didn't want to make it myself
 import favicon from '$lib/assets/favicon.svg';
-import banner from '$lib/assets/unremy_banner.png';
+import banner from '$lib/assets/Banner.png';
 
 export const prerender = false;
 // Prerender pages by default, can be overridden
