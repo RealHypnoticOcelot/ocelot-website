@@ -21,10 +21,6 @@
   @media print {
     header {
       display: table;
-      background-color: var(--default-background);
-      margin: var(--default-margin);
-      width: var(--content-width);
-      padding: var(--default-padding);
     }
     header > * {
       text-align: center;

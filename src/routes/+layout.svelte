@@ -12,7 +12,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.woff2"
 	import '$lib/global.css';
-    import { getFileName } from '$lib/utils/getFileName.js';
+  import { getFileName } from '$lib/utils/getFileName.js';
 	let { data, children } = $props();
 	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
@@ -63,8 +63,12 @@
 		z-index: -1;
 		max-width: 50vw;
 	}
+	.jsPrompt {
+		display: flex;
+		justify-content: center;
+	}
 	@media print {
-		.fullbodyImage {
+		.fullbodyImage, .jsPrompt {
 			display: none;
 		}
 	}
@@ -73,4 +77,9 @@
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}
 <Footer {footerButtons} {footerLinks} {footerText} />
+<noscript>
+	<footer class="jsPrompt">
+		<sub>Please consider enabling JavaScript, this site looks a lot nicer with it enabled!</sub>
+	</footer>
+</noscript>
 <img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }>

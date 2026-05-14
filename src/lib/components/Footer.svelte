@@ -7,13 +7,9 @@
 	footer {
 		display: flex;
 		flex-direction: column;
-		background-color: var(--default-background);
 		align-items: center;
 		justify-content: center;
-		margin: var(--default-margin);
-		width: var(--content-width);
 		min-height: 5vh;
-		padding: var(--default-padding);
 	}
 	footer > * {
 		display: flex;

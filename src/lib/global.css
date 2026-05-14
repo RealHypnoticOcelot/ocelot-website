@@ -30,12 +30,11 @@
   symbols: "\2022";
   suffix: " ";
 }
-main {
+main, header, footer {
   margin: var(--default-margin);
   padding: var(--default-padding);
   background-color: var(--default-background);
   color: var(--color-primary);
-  width: var(--content-width);
 }
 @media (max-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or smaller */
   :root {
@@ -126,5 +125,8 @@ article img {
   main a:after {
     content: " ("attr(href)")";
     white-space: normal; /* If not set, content overflows off the page */
+  }
+  noscript * {
+    display: none;
   }
 }

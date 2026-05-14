@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import ToggleSwitch from './ToggleSwitch.svelte';
-	import logo from "$lib/assets/favicon.svg";
+	import logo from "$lib/assets/icon.png";
 	import { fetchSVG } from '$lib/utils/fetchsvg';
 	import { icons, info }  from '@iconify-json/ri';
 	let { darkTheme, useHandwriting, navLinks } = $props();
@@ -11,17 +11,16 @@
 	header {
 		display: flex;
 		flex-wrap: wrap;
-		background-color: var(--default-background);
 		align-items: center;
 		justify-content: center;
-		margin: var(--default-margin);
-		width: var(--content-width);
-		padding: var(--default-padding);
 		/* position: sticky;
 		top: 0; */
 	}
 	[itemprop=logo] {
 		height: 5em;
+		/* Rules specific to the current icon: */
+		image-rendering: pixelated;
+		border: 0.25em white solid;
 	}
 	header > * {
 		display: flex;
