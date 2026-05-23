@@ -1,7 +1,12 @@
 ---
 title: "Privacy Policy"
 ---
+<header>
+
 # {title}
+
+</header>
+
 ***
 I don't collect any data, and I don't want to! Keep it to yourself, please!
 

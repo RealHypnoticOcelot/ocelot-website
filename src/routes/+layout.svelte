@@ -19,7 +19,7 @@
 	const backgroundCSS = `
 	<style>
 		:root {
-			--tile-background: url("${page.data.backgroundSVG ?? ''}");
+			--tile-background: url("/background.svg");
 		}
 		@font-face {
 			font-family: "Hypnoticocelot";
@@ -73,10 +73,12 @@
 		}
 	}
 </style>
+<div class="mainContent" itemprop="document">
 <Header {darkTheme} {useHandwriting} {navLinks}/>
 <!-- +page.svelte is `@render`ed here -->
 {@render children()}
 <Footer {footerButtons} {footerLinks} {footerText} />
+</div>
 <noscript>
 	<footer class="jsPrompt">
 		<sub>Please consider enabling JavaScript, this site looks a lot nicer with it enabled!</sub>

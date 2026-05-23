@@ -1,7 +1,12 @@
 ---
 title: "Hi!"
 ---
+<header>
+
 # {title}
+
+</header>
+
 Nice to meet you(or maybe you already know who I am)! Well, where do I begin? I'm **HypnoticOcelot** online, but most people just call me Hypno. In any case, welcome to my little corner of the internet!
 ## About Me
 ***

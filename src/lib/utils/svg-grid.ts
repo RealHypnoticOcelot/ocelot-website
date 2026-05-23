@@ -21,7 +21,10 @@ export const grid = (array: Array<any>, size: number, scale: number = 1): string
     .map(([key, value]) => `${key}="${value}"`)
     .join(" ");
   }
-  const finalGrid = gridArray.map(svgInfo => `<image ${toHtmlAttributes(svgInfo)} />`).join("\n");
+
+  const finalGrid = gridArray.map((svgInfo, i) =>
+    `<image ${toHtmlAttributes(svgInfo)} />`
+  ).join("\n");
 
   return finalGrid;
 }

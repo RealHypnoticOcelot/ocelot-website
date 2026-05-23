@@ -1,7 +1,12 @@
 ---
 title: "Uses"
 ---
+<header>
+
 # {title}
+
+</header>
+
 ***
 - The laptop I use every day is a [Lenovo P14s Gen 6 (AMD)](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-p-series-laptops/thinkpad-p14s-gen-6-type-21ql-21qm/21ql/21qlcto1ww/) running [NixOS](https://nixos.org/) with [KDE Plasma](https://kde.org/plasma-desktop)(if you want to view my config, it's hosted [here](https://github.com/RealHypnoticOcelot/hypnix)).
 - I use [LibreWolf](https://librewolf.net/) to browse the internet, and I use [LibRedirect](https://libredirect.github.io/) to automatically redirect frontends when I need to view social media pages.

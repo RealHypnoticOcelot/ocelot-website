@@ -30,7 +30,7 @@
   symbols: "\2022";
   suffix: " ";
 }
-main, header, footer {
+.mainContent > * { /* Not too sure if there's a better way to select these*/
   margin: var(--default-margin);
   padding: var(--default-padding);
   background-color: var(--default-background);

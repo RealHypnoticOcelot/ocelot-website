@@ -1,7 +1,12 @@
 ---
 title: "Licenses"
 ---
+<header>
+
 # {title}
+
+</header>
+
 ***
 - The text on this site is licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by/4.0/legalcode), unless specified otherwise. Quotations do not fall under this license; they're used under an exception to copyright, or under a separate license.
 

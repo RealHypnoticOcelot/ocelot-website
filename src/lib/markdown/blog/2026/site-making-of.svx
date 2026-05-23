@@ -31,6 +31,8 @@ So, finally I'd created my development environment for my Svelte project! I figu
 - `vite.config.js` - Configuration for Vite, which Svelte uses under the hood
 - `.npmrc` - Node.js environment variables, see https://nodejs.org/api/cli.html#environment-variables-1
 
+Due to some of the [recent controversy](https://github.com/oven-sh/bun/pull/30412) involving Bun and its Anthropic acquisition, I later decided to switch to using [Node.js](https://nodejs.org/) instead, which is actually better-supported by the NixOS ecosystem anyways. That saw the removal of `bun2nix` and `bun.nix`, and the replacement of `bun.lock` with `package-lock.json`(though they're functionally the same). 
+
 During setup, I was prompted to use either TypeScript or JavaScript, which was a hard decision; I liked the idea of being able to specify types with TypeScript, but I'd never really used it before. I started out with JavaScript, and I still use it for some of the inline scripts, but decided on TypeScript for a lot of the server-side scripts, which is fun! I don't know that it's so necessary to verify types when I'm the only one sending input to the scripts, but I figure it's a good learning experience either way.
 
 ## Acquainting myself

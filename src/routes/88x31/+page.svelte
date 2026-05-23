@@ -36,7 +36,9 @@
 </style>
 
 <main id="content">
+  <header>
   <h1>88x31</h1>
+  </header>
   <hr>
   <p>Feel free to use <a href={"#" + data.thisSite}>my button</a> anywhere!</p>
   <div class="buttons">
