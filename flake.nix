@@ -21,13 +21,22 @@
   in
   {
     packages = forSupportedSystems (system: {
-      # Produce a package for this template with bun2nix in
-      # the overlay
+      # Produce a package
       default = forSupportedPackages.${system}.buildNpmPackage {
         pname = "ocelot-website";
         version = "0.0.1";
         src = ./.;
-        npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        npmDepsHash = "sha256-CTpR8TU4Cfsf6mk6D7z6Nr4o7QtZ4xObQM3GXnhm7Ec="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+        installPhase = ''
+          runHook preInstall
+          mkdir -p $out/dist
+          makeWrapper ${nixpkgs.lib.getExe forSupportedPackages.${system}.nodejs} $out/bin/ocelot-website \
+            --run "cd $out/dist" \
+            --add-flags "$out/dist/index.js" \
+            --set NODE_ENV production
+          cp -r build/* $out/dist
+          runHook postInstall
+        '';
       };
     });
 
