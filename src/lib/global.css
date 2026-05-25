@@ -74,7 +74,24 @@ a {
   color: var(--color-highlight);
   white-space: nowrap;
 }
-code { 
+mark, *::selection {
+  background-color: var(--color-highlight);
+  color: var(--bg-primary);
+}
+kbd {
+  border: var(--color-primary) 0.01em solid;
+  padding: 0.1em;
+  background-color: var(--bg-secondary);
+  box-shadow: var(--box-shadow);
+}
+kbd:active {
+  box-shadow: none;
+}
+kbd::selection {
+  color: var(--color-primary);
+  background-color: var(--color-tertiary);
+}
+code, kbd, tt, samp, pre { 
   font-family: "Liberation Mono", "Courier New", "Noto Mono", "DejaVu Sans Mono", monospace;
   font-weight: normal;
 }
@@ -83,13 +100,39 @@ pre[class*=language-] {
   background-color: var(--color-primary);
   padding: 1em;
 }
-pre[class*=language-] > code {
+pre{
   white-space: pre-wrap;
+}
+@media screen and (max-width: 60em) { /* Make code blocks scrollable horizontally when the viewport isn't wide*/
+  pre[class*=language-] {
+    white-space: pre;
+    overflow: scroll;
+  }
+}
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+table * {
+  padding: 1em;
+  text-align: center;
+}
+thead, blockquote, mark {
+  background-color: var(--color-highlight);
+  color: var(--bg-primary);
+}
+thead *::selection, blockquote *::selection, mark::selection {
+  background-color: var(--color-primary);
+  color: var(--bg-secondary);
+}
+tr > * {
+  border: var(--color-primary) 0.1em solid;
+}
+tbody {
+  background-color: var(--bg-secondary)
 }
 blockquote {
   margin: auto;
-  color:var(--bg-primary);
-  background-color: var(--color-secondary);
   padding: 1em;
   font-style: italic;
 }
@@ -99,8 +142,11 @@ blockquote > * {
 body > div > * {
   box-sizing: border-box;
 }
-article img {
-  width: 100%;
+main img {
+  display: block;
+  margin: auto;
+  min-width: 50%;
+  max-width: 100%;
 }
 @media print {
   /* @page { 
@@ -118,7 +164,7 @@ article img {
     break-inside: avoid;
     background: none;
   }
-  body > div > * {
+  .mainContent > * {
     border: none;
     overflow: hidden;
   }

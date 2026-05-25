@@ -59,7 +59,7 @@ export async function GET({url, fetch, params}) {
 			<link rel="alternate" type="text/html" href="${new URL(post.slug, url.origin)}" />
 			<published>${post.datetime ?? ''}</published>
 			<updated>${post.updated ?? post.datetime ?? ''}</updated>
-			<rights>${post.license ?? siteTextLicense}</rights>
+			<rights>${post.license ?? siteTextLicense.licenseName}</rights>
 			<content type="html"><![CDATA[
 				${post.content.html}
 			]]>

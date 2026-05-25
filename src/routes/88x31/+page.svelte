@@ -35,23 +35,21 @@
   }
 </style>
 
-<main id="content">
-  <header>
-  <h1>88x31</h1>
-  </header>
-  <hr>
-  <p>Feel free to use <a href={"#" + data.thisSite}>my button</a> anywhere!</p>
-  <div class="buttons">
-  <!-- A bit crude, but it works! -->
-  {#each Object.keys(linkButtons) as button}
-    {@const buttonFQDN = getFileName(button).replace("__", ".")}
-    {#if buttonFQDN.startsWith('@')}
-      <a href={ 'https://' + buttonFQDN.substring(1)} id={buttonFQDN.substring(1)}>
-        <img src={linkButtons[button] ? linkButtons[button].toString() : "/"} alt={buttonFQDN.substring(1)}>
-      </a>
-    {:else}
-      <img id={buttonFQDN} src={linkButtons[button] ? linkButtons[button].toString() : "/"} alt={buttonFQDN.replace("--", " ")}>
-    {/if}
-  {/each}
-  </div>
-</main>
+<header>
+<h1>88x31</h1>
+</header>
+<hr>
+<p>Feel free to use <a href={"#" + data.thisSite}>my button</a> anywhere!</p>
+<div class="buttons">
+<!-- A bit crude, but it works! -->
+{#each Object.keys(linkButtons) as button}
+  {@const buttonFQDN = getFileName(button).replace("__", ".")}
+  {#if buttonFQDN.startsWith('@')}
+    <a href={ 'https://' + buttonFQDN.substring(1)} id={buttonFQDN.substring(1)}>
+      <img src={linkButtons[button] ? linkButtons[button].toString() : "/"} alt={buttonFQDN.substring(1)}>
+    </a>
+  {:else}
+    <img id={buttonFQDN} src={linkButtons[button] ? linkButtons[button].toString() : "/"} alt={buttonFQDN.replace("--", " ")}>
+  {/if}
+{/each}
+</div>

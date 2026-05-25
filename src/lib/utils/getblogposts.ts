@@ -8,6 +8,7 @@ export type PostMetadata = {
   author?: string;
   datetime?: string; // The date showing the time a post was created
   description: string;
+  shortDescription?: string;
   license?: string;
   updated?: string; // The date showing the last time a post was updated
   hiddentime?: string; // A date that shouldn't be shown to the user, but is used when sorting the blog posts by date

@@ -19,7 +19,7 @@ export const load: PageLoad = async ({ params, data }) => {
       openGraph: {
         type: 'article',
         title: post.metadata?.title ?? siteTitle,
-        description: post.metadata?.description ?? siteShortDescription,
+        description: post.metadata?.shortDescription ?? post.metadata?.description ?? siteShortDescription,
         article: {
           publishedTime: (postDate.date != new Date (0)) ? postDate.date.toISOString() : ""
         }

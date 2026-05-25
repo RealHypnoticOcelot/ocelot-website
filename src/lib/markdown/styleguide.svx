@@ -1,0 +1,183 @@
+---
+title: "Style Guide"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: R.W. Blickhan,
+	creditLink: "https://rwblickhan.org/styleguide/",
+  modified: true
+}
+---
+<header>
+
+# {title}
+
+</header>
+
+***
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+***
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![Banner art by Unremy]($lib/assets/Banner.png)
+
+Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
+
+> "**This is a blockquote**. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
+
+The [a element](#content), [external a element](https://example.com), and [a element with title](#content 'Example Title') examples
+
+The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples
+
+The **b element** example
+
+The <cite>cite element</cite> example
+
+The `code element` example
+
+The <data value="3967381398">data element</data> example
+
+The ~~del element~~ example
+
+The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples
+
+The *em element* example
+
+The *i element* example
+
+The <ins>ins element</ins> example
+
+The <kbd>kbd element</kbd> example
+
+The <mark>mark element</mark> example
+
+The <q>q element</q> example
+
+The <q>q element <q>inside</q> a q element</q> example
+
+The <s>s element</s> example
+
+The <samp>samp element</samp> example
+
+The <small>small element</small> example
+
+The <span>span element</span> example
+
+The **strong element** example
+
+The <sub>sub element</sub> example
+
+The <sup>sup element</sup> example
+
+The <time datetime="2005-05-15 19:00">time element</time> example
+
+The <u>u element</u> example
+
+The <var>var element</var> example
+
+* * *
+
+# Monospace / Preformatted
+
+Code block wrapped in "pre" and "code" tags:
+
+```javascript
+export const grid = (array: Array<any>, size: number, scale: number = 1): string => {
+  while (true) {
+    const root = Math.sqrt(array.length)
+    if (Number.isInteger(root)) break // Make sure the amount of items in the array is a perfect square, e.g. 4, 9, 16
+    array.pop()
+  }
+  const dimension = Math.sqrt(array.length); // e.g. 2
+  const tile_size = size / dimension; // e.g. 1024 / 2 = 512 
+  const gridArray = array.map((image: string, i) => ({
+    "href": image,
+    "x": (Math.floor(i / dimension) * tile_size) + (tile_size * ((1 - scale) / 2)),
+    "y": ((i % dimension) * tile_size) + (tile_size * ((1 - scale) / 2)),
+    "width": tile_size * scale,
+    "height": tile_size * scale,
+    "preserveAspectRatio": "xMidYMid keep" // keep makes it so that extra width/height doesn't get cut off
+  }));
+
+  // Below takes the array and converts it into image objects for the SVG
+  function toHtmlAttributes(attributes: Record<string, any>): string {
+  return Object.entries(attributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(" ");
+  }
+
+  const finalGrid = gridArray.map((svgInfo, i) =>
+    `<image ${toHtmlAttributes(svgInfo)} />`
+  ).join("\n");
+
+  return finalGrid;
+}
+```
+
+Text wrapped in "code" tags:
+
+`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.`
+
+Text wrapped in "pre" tags:
+
+<pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
+
+* * *
+
+# List Types
+
+## Ordered List
+
+1. List Item 1
+2. List Item 2
+3. List Item 3
+    1. List Item 3.1
+    2. List Item 3.2
+        1. List Item 3.2.1
+        2. List Item 3.2 2
+    3. List Item 3.3
+4. List Item 4
+
+## Unordered List
+
+* List Item 1
+* List Item 2
+* List Item 3
+  * List Item 3.1
+  * List Item 3.2
+    * List Item 3.2.1
+    * List Item 3.2 2
+  * List Item 3.3
+* List Item 4
+
+## Definition List
+
+<dl>
+  <dt>Definition Term 1</dt>
+  <dd>Definition Description 1</dd>
+  <dt>Definition Term 2</dt>
+  <dd>Definition Description 2</dd>
+</dl>
+
+* * *
+
+# Tables
+
+| Table Header 1 | Table Header 2 | Table Header 3 |
+| -------------- | -------------- | -------------- |
+| Division 1     | Division 2     | Division 3     |
+| Division 1     | Division 2     | Division 3     |
+| Division 1     | Division 2     | Division 3     |

@@ -5,7 +5,7 @@ import { siteTitle, siteDescription, siteShortDescription, siteTextLicense } fro
 
 export const load: PageLoad = async () => {
   try {
-    const post = await import(`$lib/markdown/uses.svx`);
+    const post = await import(`$lib/markdown/styleguide.svx`);
     const pageTags = definePageMetaTags({
       title: post.metadata.title ?? "[NO TITLE]",
       description: post.metadata?.description ?? siteDescription,

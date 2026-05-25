@@ -13,6 +13,8 @@
 	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.woff2"
 	import '$lib/global.css';
   import { getFileName } from '$lib/utils/getFileName.js';
+	import LicenseFooter from '$lib/components/LicenseFooter.svelte';
+	import { siteTextLicense } from '$lib/config.js';
 	let { data, children } = $props();
 	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
@@ -33,6 +35,7 @@
 	`
 
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags)); // The meta tags in the nearest layout.ts that defines it, plus page meta tags if applicable
+	let license = $derived(page.data.license);
 </script>
 
 <MetaTags {...metaTags} />
@@ -76,7 +79,10 @@
 <div class="mainContent" itemprop="document">
 <Header {darkTheme} {useHandwriting} {navLinks}/>
 <!-- +page.svelte is `@render`ed here -->
-{@render children()}
+<main id="content">
+	{@render children()}
+	<LicenseFooter {license} />
+</main>
 <Footer {footerButtons} {footerLinks} {footerText} />
 </div>
 <noscript>

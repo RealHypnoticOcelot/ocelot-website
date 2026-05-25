@@ -20,7 +20,8 @@
   }
   @media print {
     header {
-      display: table;
+      display: flex;
+      justify-content: center;
     }
     header > * {
       text-align: center;

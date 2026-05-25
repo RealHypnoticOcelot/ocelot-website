@@ -1,0 +1,15 @@
+---
+title: "About"
+---
+<header>
+
+# {title}
+
+</header>
+
+***
+Well, I think I've covered most of the stuff about me on the main page, but here's some other pages you might want to hear about:
+
+- My [88x31](/88x31) collection
+- This site's [Style Guide](/styleguide)
+- My [Uses](/uses) page

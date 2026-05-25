@@ -2,7 +2,14 @@ export const siteTitle = 'HypnoticOcelot';
 export const siteDescription = 'Welcome to my personal website!';
 export const siteShortDescription = 'I do things';
 export const siteAuthor = 'HypnoticOcelot';
-export const siteTextLicense = 'CC-BY-SA 4.0';
+export const siteTextLicense = {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: siteAuthor,
+	original: true,
+	modified: false,
+	creditLink: "",
+};
 
 // Default maximum number of blog posts fetched at once
 export const defaultMaxPosts = 10;

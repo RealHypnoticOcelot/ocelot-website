@@ -3,7 +3,7 @@ import { fetchSVG } from '$lib/utils/fetchsvg';
 import { icons, info } from '@iconify-json/simple-icons';
 import { svgToURI } from '$lib/utils/svgToURI';
 import { shuffle } from '$lib/utils/shuffle';
-import { footerText } from '$lib/config';
+import { footerText, siteTextLicense } from '$lib/config';
 
 const navLinks = [
 	{
@@ -13,11 +13,8 @@ const navLinks = [
 	{ 
 		title: 'Blog',
 	},
-	{ 
-		title: 'Uses',
-	},
 	{
-		title: '88x31',
+		title: 'About',
 	},
   {
     title: "Feed",
@@ -73,6 +70,7 @@ export const load: LayoutServerLoad = async ({fetch, locals}) => {
 		footerLinks,
 		footerText: shuffle(footerText)[0],
 		fullbodyImage,
+		license: siteTextLicense,
 		darkTheme: locals.theme, // From hooks.server.ts
     useHandwriting: locals.useHandwriting, // From hooks.server.ts
   };
