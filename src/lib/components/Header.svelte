@@ -18,6 +18,8 @@
 	}
 	[itemprop=logo] {
 		height: 5em;
+		aspect-ratio: 1;
+		overflow: scroll; /* For alt text not to overflow */
 		/* Rules specific to the current icon: */
 		image-rendering: pixelated;
 		border: 0.25em white solid;

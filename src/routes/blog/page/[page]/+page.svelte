@@ -36,6 +36,7 @@
 </header>
 <hr>
 <div class="post-container">
+TODO: ADD RANDOM BUTTON
 {#each data.posts.data as post}
   <a href="/{post.slug}">
     <div class="post">

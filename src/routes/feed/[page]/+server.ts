@@ -5,7 +5,6 @@ import { svgToURI } from '$lib/utils/svgToURI.js';
 import { redirect } from '@sveltejs/kit';
 
 export async function GET({url, fetch, params}) {
-	const imageTiles = await fetch("/background.svg");
 	const pageNumber = parseInt(params.page ?? '');
 	if (isNaN(pageNumber) || (pageNumber == 0 || pageNumber < -1)) { // If pageNumber is neither a number nor a positive number nor -1
 		redirect(301, `/feed/1`)
@@ -20,9 +19,6 @@ export async function GET({url, fetch, params}) {
 <?xml-stylesheet href="${style}" type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<style xmlns="http://www.w3.org/1999/xhtml">
-		:root {
-			--tile-background: url("${svgToURI(await imageTiles.text())}")
-		}
 		feed > * {
 			display: grid;
 			align-content: center;
@@ -61,11 +57,11 @@ export async function GET({url, fetch, params}) {
 			<updated>${post.updated ?? post.datetime ?? ''}</updated>
 			<rights>${post.license ?? siteTextLicense.licenseName}</rights>
 			<content type="html"><![CDATA[
-				${post.content.html}
+				${post.content.html.replace("]]>", "]]]]><![CDATA[>")}
 			]]>
 			</content>
 		</entry>
-		`
+		` // The html.replace prevents the feed from breaking in the event of the line terminator being used, see https://news.ycombinator.com/item?id=48280967
 	).join('')}
 </feed>
 		`.trim(),

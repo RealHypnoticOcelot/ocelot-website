@@ -9,7 +9,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-height: 5vh;
+		min-height: 5dvh;
 	}
 	footer > * {
 		display: flex;

@@ -20,9 +20,6 @@
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
 	const backgroundCSS = `
 	<style>
-		:root {
-			--tile-background: url("/background.svg");
-		}
 		@font-face {
 			font-family: "Hypnoticocelot";
 			src:
@@ -60,11 +57,11 @@
 	}
 	.fullbodyImage {
 		position: fixed;
-		max-height: 100vh;
+		max-height: 100dvh;
 		bottom: 0;
 		right: 0;
 		z-index: -1;
-		max-width: 50vw;
+		max-width: 50dvw;
 	}
 	.jsPrompt {
 		display: flex;
