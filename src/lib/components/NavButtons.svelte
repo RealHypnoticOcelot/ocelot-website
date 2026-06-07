@@ -1,11 +1,13 @@
 <script>
+  import { randomPost } from "$lib/utils/getPost";
+  import { toLongSlug } from "$lib/utils/toLongSlug";
   let { route, pageNumber, isFirstPage, isLastPage } = $props();
 </script>
 
 <style>
   nav {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: center;
     line-height: calc(var(--size, 4em) / 4);
   }
@@ -29,14 +31,19 @@
 </style>
 
 <nav>
-{#if !isFirstPage}
   <form action={route.replace(pageNumber, pageNumber - 1)} data-sveltekit-keepfocus data-sveltekit-noscroll>
-    <input type="submit" value="Previous" />
+    <input type="submit" value="Previous" disabled={isFirstPage}/>
   </form>
-{/if}
-{#if !isLastPage}
+  <form action={
+    (() => {
+    const [path, file] = randomPost();
+    const postData = file.metadata;
+    return toLongSlug(path, postData);
+    })()
+  }>
+    <input type="submit" value="Random" />
+  </form>
   <form action={route.replace(pageNumber, pageNumber + 1)} data-sveltekit-keepfocus data-sveltekit-noscroll>
-    <input type="submit" value="Next" />
+    <input type="submit" value="Next" disabled={isLastPage}/>
   </form>
-{/if}
 </nav>

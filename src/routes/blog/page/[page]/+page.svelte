@@ -36,9 +36,8 @@
 </header>
 <hr>
 <div class="post-container">
-TODO: ADD RANDOM BUTTON
 {#each data.posts.data as post}
-  <a href="/{post.slug}">
+  <a href={post.slug}>
     <div class="post">
       <strong>{post.title ?? "[NO TITLE]"}</strong>
       <em><time datetime={post.updated ?? post.datetime}>{formatDate(post.updated ?? post.datetime, true).YMD}</time></em>

@@ -14,7 +14,6 @@
 	import '$lib/global.css';
   import { getFileName } from '$lib/utils/getFileName.js';
 	import LicenseFooter from '$lib/components/LicenseFooter.svelte';
-	import { siteTextLicense } from '$lib/config.js';
 	let { data, children } = $props();
 	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
