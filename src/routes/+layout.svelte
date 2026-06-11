@@ -12,10 +12,9 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import hypnoFont from "$lib/assets/Hypnoticocelot-Regular.woff2"
 	import '$lib/global.css';
-  import { getFileName } from '$lib/utils/getFileName.js';
 	import LicenseFooter from '$lib/components/LicenseFooter.svelte';
 	let { data, children } = $props();
-	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks, fullbodyImage } = $derived(data);
+	let { darkTheme, useHandwriting, navLinks, footerButtons, footerLinks } = $derived(data);
 	const footerText = page.data.footerText; // We don't want this to update in response to things like form actions
 	const backgroundCSS = `
 	<style>
@@ -48,26 +47,26 @@
 		color-scheme: light;
 	}
 	:global(:root[usehandwriting='true']) {
-		--default-font: 'Hypnoticocelot';
+		--default-font: 'Hypnoticocelot', "Liberation Sans", "Helvetica Neue", "Noto Sans", "Open Sans", sans-serif;
 		font-weight: bold;
 	}
 	:global(:root[usehandwriting='true'] ul) {
 		list-style-type: handwriting-circle;
 	}
-	.fullbodyImage {
+	/* .fullbodyImage {
 		position: fixed;
 		max-height: 100dvh;
 		bottom: 0;
 		right: 0;
 		z-index: -1;
 		max-width: 50dvw;
-	}
+	} */
 	.jsPrompt {
 		display: flex;
 		justify-content: center;
 	}
 	@media print {
-		.fullbodyImage, .jsPrompt {
+		.jsPrompt {
 			display: none;
 		}
 	}
@@ -86,4 +85,4 @@
 		<sub>Please consider enabling JavaScript, this site looks a lot nicer with it enabled!</sub>
 	</footer>
 </noscript>
-<img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }>
+<!-- <img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }> -->

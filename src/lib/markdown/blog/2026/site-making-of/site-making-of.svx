@@ -100,3 +100,9 @@ While I was working on all this, I was also working on my blog's RSS(technically
 ## 88x31
 
 Once that was over with, I wanted to add some [88x31 buttons](https://en.wikipedia.org/wiki/Web_badge)! I set up a simple little page that would pull all of the images from a directory and put them onto the page. I wanted to be able to dynamically link to a button's URL if applicable, and have no URL if not, so I leveraged the filenames to do so. Any image starting with the `@` symbol will be treated as a URL, and double underscores(`__`) will be replaced with periods. For example, the file `@ocelot__lol.gif` becomes the url [ocelot.lol](https://ocelot.lol/)! If it's not a URL, it'll replace double hyphens(`--`) with spaces for the alt text, so that `hypnotic--ocelot` will become `hypnotic ocelot`. I also took some inspiration from [beeps.website](https://beeps.website/), and had the buttons scale up when you hover over them!
+
+## Compatibility
+
+My site was working, and looked as intended in my browser of choice([LibreWolf](https://librewolf.net/)), but what about other browsers? I spun up my development server, opened up a port on my laptop, and checked out my site on other devices of mine! With Firefox on iOS, I noticed that WebKit had some default styles that messed up the way the site was supposed to look, so I wrote some extra CSS rules to account for it. I checked the site out on [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium), too, and even tested the site out on the 3DS:
+
+![This website's style guide being displayed on a 3DS screen]($lib/markdown/blog/2026/site-making-of/3ds.png)

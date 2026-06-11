@@ -1,7 +1,6 @@
 import type { LayoutServerLoad } from './$types';
 import { fetchSVG } from '$lib/utils/fetchsvg'; 
 import { icons, info } from '@iconify-json/simple-icons';
-import { svgToURI } from '$lib/utils/svgToURI';
 import { shuffle } from '$lib/utils/shuffle';
 import { footerText, siteTextLicense } from '$lib/config';
 
@@ -62,14 +61,11 @@ const footerLinks = [
 ];
 
 export const load: LayoutServerLoad = async ({fetch, locals}) => {
-  let fullbodyImages = Object.values(import.meta.glob('$lib/assets/fullbody-images/*', { eager: true, import: 'default' }));
-	let fullbodyImage = String(fullbodyImages[Math.floor(Math.random() * fullbodyImages.length)]);
   return {
     navLinks,
 		footerButtons,
 		footerLinks,
 		footerText: shuffle(footerText)[0],
-		fullbodyImage,
 		license: siteTextLicense,
 		darkTheme: locals.theme, // From hooks.server.ts
     useHandwriting: locals.useHandwriting, // From hooks.server.ts

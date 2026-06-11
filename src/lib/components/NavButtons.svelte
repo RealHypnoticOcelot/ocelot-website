@@ -6,16 +6,16 @@
 
 <style>
   nav {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
     justify-content: center;
     line-height: calc(var(--size, 4em) / 4);
+    flex-wrap: wrap;
   }
   form {
-    margin-left: calc(var(--size, 4em) / 8);
-    margin-right: calc(var(--size, 4em) / 8);
+    margin: calc(var(--size, 4em) / 8);
   }
   input {
+    color: var(--color-primary);
     cursor: pointer;
     border: calc(var(--size, 4em) / 16) var(--color-primary) solid;
     box-sizing: content-box;
@@ -24,9 +24,13 @@
     width: calc(var(--size, 4em) * 1.5);
     font-size: 16px;
     font-family: var(--default-font);
+    border-radius: 0;
   }
   input:hover {
     background-color: var(--bg-secondary);
+  }
+  input:disabled {
+    color: var(--color-tertiary);
   }
 </style>
 

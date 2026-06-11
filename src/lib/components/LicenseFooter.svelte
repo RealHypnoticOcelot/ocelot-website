@@ -8,6 +8,12 @@
     width: 75%;
     margin-left: auto;
   }
+  @media screen and (max-width: 60em) {
+    footer { /* Make it look a little nicer on smaller screens */
+      width: 100%;
+      text-align: left;
+    }
+  }
 </style>
 
 {#if !license.original}

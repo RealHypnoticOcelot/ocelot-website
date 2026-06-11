@@ -28,7 +28,7 @@ export type BlogPosts = {
   isLastPage: boolean;
 }
 
-const paths: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/**", { eager: true });
+const paths: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/**/*.svx", { eager: true });
 export const getBlogPosts = async ( offset: number = 1, maxPosts: number = defaultMaxPosts, includeContent: boolean = false): Promise<BlogPosts> => {
   const posts: Array<any> = Object.entries(paths)
     .map(([path, file]) => {

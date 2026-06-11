@@ -18,8 +18,8 @@
 	}
 	[itemprop=logo] {
 		height: 5em;
-		aspect-ratio: 1;
 		overflow: scroll; /* For alt text not to overflow */
+		max-width: 50vw; /* Just in case it doesn't load */
 		/* Rules specific to the current icon: */
 		image-rendering: pixelated;
 		border: 0.25em white solid;
@@ -46,6 +46,7 @@
 		position: absolute;
 		transform: translateY(-100em);
 		background-color: var(--bg-primary);
+		left: -1000px;
 	}
 	#skip {
 		position: fixed;
@@ -56,6 +57,7 @@
 	}
 	fieldset {
 		justify-content: center;
+		border: none;
 	}
 	@media print {
 		header {

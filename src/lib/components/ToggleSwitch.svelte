@@ -27,6 +27,7 @@
     display: grid;
     align-content: center;
     justify-content: center;
+    color: var(--color-primary);
   }
 </style>
 

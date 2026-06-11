@@ -4,7 +4,7 @@ import type { PostFile } from "./getblogposts";
 import { getFileName } from "./getFileName";
 import { shuffle } from "./shuffle";
 
-const allPosts: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/**", { eager: true });
+const allPosts: Record<string, PostFile> = import.meta.glob("$lib/markdown/blog/**/*.svx", { eager: true });
 const postMap: Record<string, PostFile[]> = {};
 
 // Fetch the posts once when the server starts, instead of every time

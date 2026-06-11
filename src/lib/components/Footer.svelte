@@ -14,10 +14,9 @@
 	footer > * {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0.5em;
 	}
 	nav a {
-		padding: 0 0.5em 0 0.5em;
+		padding: 0.5em;
 		text-decoration: none;
 	}
 	a :global {
