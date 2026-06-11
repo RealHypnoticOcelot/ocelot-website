@@ -14,7 +14,6 @@ export const load: PageLoad = async ({ url }) => {
     });
     return {
       ...pageTags,
-      thisSite: url.host
     };
   } catch {
     error(404, 'Not found');

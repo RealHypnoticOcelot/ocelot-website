@@ -34,7 +34,7 @@
 		color: var(--color-primary);
 	}
 	#footerlinks > *:not(:last-child) {
-		border-right: 0.1em solid var(--color-highlight);
+		border-right: 0.1em solid var(--color-primary);
 	}
 	cite {
 		display: none;

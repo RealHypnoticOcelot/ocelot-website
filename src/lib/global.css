@@ -59,6 +59,11 @@
     --fullbody-background: none;
   }
 }
+@media screen and (max-width: 60em) {
+  :root { /* Make it look a little nicer on smaller screens */
+    --fullbody-background: none;
+  }
+}
 body, feed {
   margin: auto;
   width: var(--content-width);

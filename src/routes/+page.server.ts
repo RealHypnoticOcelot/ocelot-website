@@ -1,5 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 
+export const prerender = false;
+
 export const actions = {
   setCustomization: async ({ url, cookies }) => {
     const checkedType = url.searchParams.get('checkedType') ?? "null";

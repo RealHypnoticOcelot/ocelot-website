@@ -1,8 +1,6 @@
 <script>
-    import { page } from '$app/state';
-    import { getFileName } from '$lib/utils/getFileName.js';
-
-  let { data } = $props();
+  import { siteFQDN } from '$lib/config';
+  import { getFileName } from '$lib/utils/getFileName.js';
   const linkButtons = import.meta.glob('$lib/assets/88x31/*', { eager: true, import: 'default' });
 </script>
 
@@ -39,7 +37,7 @@
 <h1>88x31</h1>
 </header>
 <hr>
-<p>Feel free to use <a href={"#" + data.thisSite}>my button</a> anywhere!</p>
+<p>Feel free to use <a href={"#" + siteFQDN}>my button</a> anywhere!</p>
 <div class="buttons">
 <!-- A bit crude, but it works! -->
 {#each Object.keys(linkButtons) as button}
