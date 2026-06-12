@@ -27,16 +27,26 @@
   scrollbar-color: var(--color-highlight) var(--bg-primary);
   line-height: 1.5em;
 }
-@counter-style handwriting-circle {
-  system: cyclic;
-  symbols: "\2022";
-  suffix: " ";
+body, feed {
+  margin: auto;
+  width: var(--content-width);
+  font-family: var(--default-font);
+  background: 
+    var(--fullbody-background) fixed no-repeat bottom right / contain,
+    var(--tile-background) fixed repeat 0 0 / var(--background-size),
+    repeating-linear-gradient(color(from var(--bg-primary) srgb r g b  / 0.1)) fixed,
+    var(--color-highlight);
 }
 .mainContent > * { /* Not too sure if there's a better way to select these*/
   margin: var(--default-margin);
   padding: var(--default-padding);
   background-color: var(--default-background);
   color: var(--color-primary);
+}
+@counter-style handwriting-circle {
+  system: cyclic;
+  symbols: "\2022";
+  suffix: " ";
 }
 @media (max-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or smaller */
   :root {
@@ -63,16 +73,6 @@
   :root { /* Make it look a little nicer on smaller screens */
     --fullbody-background: none;
   }
-}
-body, feed {
-  margin: auto;
-  width: var(--content-width);
-  font-family: var(--default-font);
-  background: 
-    var(--fullbody-background) fixed no-repeat right / contain,
-    var(--tile-background) fixed repeat 0 0 / var(--background-size),
-    repeating-linear-gradient(color(from var(--bg-primary) srgb r g b  / 0.1)) fixed,
-    var(--color-highlight);
 }
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0.5em;
