@@ -2,8 +2,8 @@ import { dev } from '$app/environment';
 import type { LayoutLoad } from './$types';
 import { siteAuthor, siteDescription, siteShortDescription, siteTitle } from '$lib/config';
 import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred my own solution, I wanted a deep merge function and didn't want to make it myself
-import favicon from '$lib/assets/icon.png';
-import banner from '$lib/assets/Banner.png';
+import favicon from '$lib/assets/favicon.svg';
+import banner from '$lib/assets/banner.png';
 
 export const prerender = true;
 // Prerender pages by default, can be overridden
@@ -43,7 +43,7 @@ export const load: LayoutLoad = async ({ data, url }) => {
       { "name": "mobile-web-app-capable", "content": "yes" }
     ],
     additionalLinkTags: [
-      { "rel": "icon", "href": favicon, "type": "image/png", "sizes": "any" },
+      { "rel": "icon", "href": favicon, "type": "image/svg", "sizes": "any" },
       { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
       { "rel": "license", "href": new URL("licenses", url.origin).href},
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },

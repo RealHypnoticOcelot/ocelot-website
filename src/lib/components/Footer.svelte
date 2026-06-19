@@ -15,9 +15,11 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	nav a {
-		padding: 0.5em;
-		text-decoration: none;
+	footer > *:first-child {
+		margin-top: 1em;
+	}
+	footer > *:last-child {
+		margin-bottom: 1em;
 	}
 	a :global {
 		svg {
@@ -26,15 +28,20 @@
       height: 3em;
 		}
 	}
-	#socialbuttons {
+	#socialButtons {
 		justify-content: space-evenly;
 		width: 100%;
 	}
-	#socialbuttons a {
+	#socialButtons a {
 		color: var(--color-primary);
 	}
-	#footerlinks > *:not(:last-child) {
-		border-right: 0.1em solid var(--color-primary);
+	#footerLinks a {
+		padding: 0 1em 0 1em;
+		margin: 0.5em 0 0.5em 0;
+		text-decoration: none;
+	}
+	#footerLinks > *:not(:last-child) {
+		border-right: 0.1em solid var(--color-highlight);
 	}
 	cite {
 		display: none;
@@ -51,7 +58,7 @@
 </style>
 
 <footer>
-	<nav id="socialbuttons">
+	<nav id="socialButtons">
 		{#each footerButtons as link}
 				<a
 					href="{link.url}"
@@ -62,7 +69,7 @@
 				</a>
 		{/each}
 	</nav>
-	<nav id="footerlinks" data-sveltekit-keepfocus>
+	<nav id="footerLinks" data-sveltekit-keepfocus>
 		{#each footerLinks as link}
 			<a
 				href="/{link.slug ?? link.title.toLowerCase()}"

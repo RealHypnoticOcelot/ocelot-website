@@ -5,7 +5,7 @@ datetime: 2026-04-20T18:21-04:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
-It was around April 2022 that I'd made my original website, and [if you can't tell](https://web.archive.org/web/20260412044114if_/https://ocelot.lol/), I knew very little about programming back then! Fortunately, I like to think I know a little more now, and after being inspired by [elle](https://ellesho.me/), I decided I'd start from scratch on a brand new site, one with a little more substance. I had two goals in mind for this new-and-improved site: I wanted to add a blog with an RSS feed, and I wanted a comment section for each blog post.
+It was around April 2022 that I'd made my original website, and [if you can't tell](https://web.archive.org/web/20260412044114if_/https://ocelot.lol/), I knew very little about programming back then! Fortunately, I like to think I know a little more now, and after being inspired by [elle](https://ellesho.me/), I decided I'd start from scratch on a brand new site, one with a little more substance. I had two goals in mind for this new-and-improved site: I wanted to add a blog with an [RSS feed](https://en.wikipedia.org/wiki/RSS), and I wanted a comment section for each blog post.
 
 ## Picking a framework
 

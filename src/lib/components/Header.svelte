@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import ToggleSwitch from './ToggleSwitch.svelte';
-	import logo from "$lib/assets/icon.png";
+	import logo from "$lib/assets/favicon.svg";
 	import { fetchSVG } from '$lib/utils/fetchsvg';
 	import { icons, info }  from '@iconify-json/ri';
 	let { darkTheme, useHandwriting, navLinks } = $props();
@@ -17,24 +17,24 @@
 		top: 0; */
 	}
 	[itemprop=logo] {
-		height: 5em;
+		height: 6em;
 		overflow: scroll; /* For alt text not to overflow */
 		max-width: 50vw; /* Just in case it doesn't load */
-		/* Rules specific to the current icon: */
+		/* Rules specific to a pixel icon:
 		image-rendering: pixelated;
-		border: 0.25em white solid;
+		border: 0.25em white solid; */
 	}
 	header > * {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0.5em;
 	}
 	nav {
 		flex-grow: 1;
 		justify-content: center;
 	}
 	nav a {
-		padding: 1em;
+		padding: 0 1em 0 1em;
+		margin: 2em 0 2em 0;
 		text-decoration: none;
 	}
 	a :global {
@@ -58,6 +58,9 @@
 	fieldset {
 		justify-content: center;
 		border: none;
+	}
+	#headerLinks > *:not(:last-child) {
+		border-right: 0.1em solid var(--color-highlight);
 	}
 	@media print {
 		header {
@@ -84,7 +87,7 @@
 			itemprop="logo"
 		/>
 	</a>
-	<nav data-sveltekit-keepfocus>
+	<nav id="headerLinks" data-sveltekit-keepfocus>
 		{#each navLinks as link}
 			<a
 				href="/{link.slug ?? link.title.toLowerCase()}"
