@@ -26,7 +26,7 @@
         pname = "ocelot-website";
         version = "0.0.1";
         src = ./.;
-        npmDepsHash = "sha256-Ben1ULhbsfqLUiUZvxX+klE31SINDndO7IP4S8U0kcg="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+        npmDepsHash = "sha256-TyYMlvY81SS60aPaPI1KYMgLrzYay9OyVtTolT+fcyo="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
         installPhase = ''
           runHook preInstall
           mkdir -p $out/dist
