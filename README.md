@@ -1,11 +1,14 @@
 # ocelot-website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Entering the development environment
+
+```sh
+nix develop
+```
 
 ## Installing dependencies
 
 ```sh
-# create a new project
 npm install -D @my-dependency/here
 ```
 
@@ -17,7 +20,16 @@ Start a development server:
 npm run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev --open
+npm run dev -- --open
+
+# or start the server and make it available on the local network
+npm run dev -- --host
+```
+
+## Exiting the development environment
+
+```sh
+exit
 ```
 
 ## Building
@@ -25,7 +37,15 @@ npm run dev --open
 To create a production version of your app:
 
 ```sh
-npm run build
+nix build
 ```
+You can preview the production build with `nix run`.
 
-You can preview the production build with `npm run preview`.
+To create a Docker container for yout app:
+
+```sh
+nix build .#docker
+
+# or push to the registry in flake.nix
+nix ubild .#docker.copyToRegisry
+```

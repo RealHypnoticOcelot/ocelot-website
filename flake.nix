@@ -1,10 +1,12 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix2container.url = "github:nlewo/nix2container";
   };
 
-  outputs = { nixpkgs, ... } @ inputs:
+  outputs = { nixpkgs, nix2container, ... } @ inputs:
   let
+    packageName = "ocelot-website";
     forSupportedSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "i686-linux"
@@ -12,31 +14,48 @@
       "riscv64-linux"
       "aarch64-darwin"
     ];
-    forSupportedPackages = forSupportedSystems ( # Create a list of nixpkgs objects with the bun2nix overlay
+    forSupportedPackages = forSupportedSystems ( # Create a list of nixpkgs objects
       system:
       import nixpkgs {
         inherit system;
       }
     );
+    forSupportedNix2ContainerPackages = forSupportedSystems (
+      system:
+      nix2container.packages.${system}
+    );
   in
   {
-    packages = forSupportedSystems (system: {
-      # Produce a package
-      default = forSupportedPackages.${system}.buildNpmPackage {
-        pname = "ocelot-website";
+    packages = forSupportedSystems (system:
+      let
+        nodeApp = forSupportedPackages.${system}.buildNpmPackage {
+        pname = packageName;
         version = "0.0.1";
         src = ./.;
         npmDepsHash = "sha256-TyYMlvY81SS60aPaPI1KYMgLrzYay9OyVtTolT+fcyo="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
         installPhase = ''
           runHook preInstall
           mkdir -p $out/dist
-          makeWrapper ${nixpkgs.lib.getExe forSupportedPackages.${system}.nodejs} $out/bin/ocelot-website \
+          makeWrapper ${nixpkgs.lib.getExe forSupportedPackages.${system}.nodejs} $out/bin/${packageName} \
             --run "cd $out/dist" \
             --add-flags "$out/dist/index.js" \
             --set NODE_ENV production
           cp -r build/* $out/dist
           runHook postInstall
         '';
+        };
+      in
+      {
+      # The default package when nix build is run
+      default = nodeApp;
+      # The docker container, e.g. nix build .#docker
+      docker = forSupportedNix2ContainerPackages.${system}.nix2container.buildImage {
+        name = "ghcr.io/RealHypnoticOcelot/${packageName}";
+        tag = "latest";
+        copyToRoot = nodeApp;
+        config = {
+          Cmd = [ "/bin/${packageName}"];
+        };
       };
     });
 
