@@ -1,7 +1,6 @@
 import { siteTitle, siteDescription, defaultMaxPosts, siteTextLicense } from '$lib/config'
 import style from "$lib/global.css?url"
 import { getBlogPosts } from '$lib/utils/getblogposts';
-import { svgToURI } from '$lib/utils/svgToURI.js';
 import { redirect } from '@sveltejs/kit';
 
 export async function GET({url, fetch, params}) {
