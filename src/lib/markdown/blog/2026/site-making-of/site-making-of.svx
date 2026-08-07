@@ -1,7 +1,7 @@
 ---
 title: "Making of: This Website"
 author: HypnoticOcelot
-datetime: 2026-04-20T18:21-04:00
+datetime: 2026-08-07T16:27-29:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
@@ -115,7 +115,7 @@ One thing I was hoping to do on this site was replace the default cursor with a 
 
 ## Actually Deploying
 
-My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [dockerTools.buildImage](https://nixos.org/manual/nixpkgs/stable/#ssec-pkgs-dockerTools-buildImage) tool. I then fiddled around with [GitHub Actions](https://github.com/features/actions), something I've never used before, to have a Docker container built and pushed to GitHub's Docker container registry.
+My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [dockerTools.buildImage](https://nixos.org/manual/nixpkgs/stable/#ssec-pkgs-dockerTools-buildImage) tool. I then fumbled around with [GitHub Actions](https://github.com/features/actions), something I've never used before, to have a Docker container built and pushed to GitHub's Docker container registry. I'm sure that there's a more efficient way to do it, but it works! Maybe one day in the future, I'll know more about GitHub Actions, and go back to clean that up.
 
 ## Final thoughts
 

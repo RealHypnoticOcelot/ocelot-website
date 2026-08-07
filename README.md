@@ -41,11 +41,21 @@ nix build
 ```
 You can preview the production build with `nix run`.
 
-To create a Docker container for yout app:
+To create a Docker container for your app:
 
 ```sh
 nix build .#docker
+```
 
-# or push to the registry in flake.nix
-nix ubild .#docker.copyToRegisry
+## Example Compose
+
+To run the build with Docker Compose:
+
+```docker
+services:
+  ocelot-website:
+    image: ghcr.io/realhypnoticocelot/ocelot-website:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
 ```
