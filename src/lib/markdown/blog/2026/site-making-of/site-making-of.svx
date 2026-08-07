@@ -1,7 +1,7 @@
 ---
 title: "Making of: This Website"
 author: HypnoticOcelot
-datetime: 2026-08-07T16:27-29:00
+datetime: 2026-08-07T16:27-04:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
