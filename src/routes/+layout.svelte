@@ -53,23 +53,6 @@
 	:global(:root[usehandwriting='true'] ul) {
 		list-style-type: handwriting-circle;
 	}
-	/* .fullbodyImage {
-		position: fixed;
-		max-height: 100dvh;
-		bottom: 0;
-		right: 0;
-		z-index: -1;
-		max-width: 50dvw;
-	} */
-	.jsPrompt {
-		display: flex;
-		justify-content: center;
-	}
-	@media print {
-		.jsPrompt {
-			display: none;
-		}
-	}
 </style>
 <div class="mainContent" itemprop="document">
 <Header {darkTheme} {useHandwriting} {navLinks}/>
@@ -80,9 +63,4 @@
 </main>
 <Footer {footerButtons} {footerLinks} {footerText} />
 </div>
-<noscript>
-	<footer class="jsPrompt">
-		<sub>Please consider enabling JavaScript, this site looks a lot nicer with it enabled!</sub>
-	</footer>
-</noscript>
 <!-- <img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }> -->

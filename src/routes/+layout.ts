@@ -44,13 +44,13 @@ export const load: LayoutLoad = async ({ data, url }) => {
     ],
     additionalLinkTags: [
       { "rel": "icon", "href": favicon, "type": "image/svg", "sizes": "any" },
-      { "rel": "apple-touch-icon", "href": favicon }, // TODO FIX
+      { "rel": "apple-touch-icon", "href": favicon },
       { "rel": "license", "href": new URL("licenses", url.origin).href},
       { "rel": "me", "href": "https://github.com/RealHypnoticOcelot" },
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
       { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" },
-      { "rel": "alternate", "href": new URL("feed", url.origin).href }
+      { "rel": "alternate", "href": new URL("feed/1", url.origin).href }
     ]
   });
   return {

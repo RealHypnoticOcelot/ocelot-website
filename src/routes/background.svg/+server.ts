@@ -8,7 +8,7 @@ export async function GET() {
   const svgSize = 512; // Kind of inconsequential, on account of the whole infinitely scaling thing
   const backgroundImages = import.meta.glob('$lib/assets/background-tiles/*', { eager: true, import: 'default', query: '?inline' });
 	// Must be inline(data URIs), because external requests aren't loaded inside of SVGs
-  const shuffledImages = grid(shuffle(Object.values(backgroundImages)), svgSize, 0.9);
+  const shuffledImages = grid(shuffle(Object.values(backgroundImages)), svgSize, 2, 0.9);
 	return new Response(
 		`
     <svg version="1.1"
@@ -26,7 +26,8 @@ export async function GET() {
     `.trim(),
 		{
 			headers: {
-				'Content-Type': 'image/svg+xml'
+				'Content-Type': 'image/svg+xml',
+				'Cache-Control': 'no-cache'
 			}
 		}
 	);
