@@ -28,6 +28,6 @@ jobs:
           nix build .#docker
 
       - run: |
-          image=${docker load -i < result}
+          image=$(docker load -i < result)
           docker tag "$image" ghcr.io/${{ github.repository }}:latest
           docker push ghcr.io/${{ github.repository }}:latest
