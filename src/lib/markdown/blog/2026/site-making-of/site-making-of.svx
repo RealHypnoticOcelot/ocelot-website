@@ -115,7 +115,7 @@ One thing I was hoping to do on this site was replace the default cursor with a 
 
 ## Actually Deploying
 
-My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [nix2container](https://github.com/nlewo/nix2container) tool.
+My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [dockerTools.buildImage](https://nixos.org/manual/nixpkgs/stable/#ssec-pkgs-dockerTools-buildImage) tool. I then fiddled around with [GitHub Actions](https://github.com/features/actions), something I've never used before, to have a Docker container built and pushed to GitHub's Docker container registry.
 
 ## Final thoughts
 

@@ -1,10 +1,9 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix2container.url = "github:nlewo/nix2container";
   };
 
-  outputs = { nixpkgs, nix2container, ... } @ inputs:
+  outputs = { nixpkgs, ... } @ inputs:
   let
     packageName = "ocelot-website";
     forSupportedSystems = nixpkgs.lib.genAttrs [
@@ -19,10 +18,6 @@
       import nixpkgs {
         inherit system;
       }
-    );
-    forSupportedNix2ContainerPackages = forSupportedSystems (
-      system:
-      nix2container.packages.${system}
     );
   in
   {
@@ -49,8 +44,8 @@
       # The default package when nix build is run
       default = nodeApp;
       # The docker container, e.g. nix build .#docker
-      docker = forSupportedNix2ContainerPackages.${system}.nix2container.buildImage {
-        name = "ghcr.io/RealHypnoticOcelot/${packageName}";
+      docker = forSupportedPackages.${system}.dockerTools.buildImage {
+        name = "${packageName}";
         tag = "latest";
         copyToRoot = nodeApp;
         config = {
