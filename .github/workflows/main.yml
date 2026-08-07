@@ -14,20 +14,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      # Makes the repository available to the action
+      - uses: actions/checkout@v7
       
+      # Log in to GHCR
       - uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
+      # Install Nix
       - uses: cachix/install-nix-action@v31
 
+      # Build the container
       - run: |
           nix build .#docker
 
+      # Load the container, tag it, and push it
       - run: |
-          image=$(docker load < result | sed 's/Loaded image: //')
-          docker tag "$image" ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
+          docker tag "$IMAGE" ghcr.io/${REPO,,}:latest
+          docker push ghcr.IMAGEo/${REPO,,}:latest
+        env:
+          IMAGE: '$(docker load < result | sed "s/Loaded image: //")'
+          REPO: '${{ github.repository}}'
