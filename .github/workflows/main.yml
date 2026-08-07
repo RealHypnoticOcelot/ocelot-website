@@ -36,5 +36,5 @@ jobs:
           docker tag "$IMAGE" ghcr.io/${REPO,,}:latest
           docker push ghcr.IMAGEo/${REPO,,}:latest
         env:
-          IMAGE: '$(docker load < result | sed "s/Loaded image: //")'
+          IMAGE: $(docker load < result | sed 's/Loaded image: //')
           REPO: '${{ github.repository}}'
