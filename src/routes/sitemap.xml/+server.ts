@@ -1,4 +1,3 @@
-export const prerender = true;
 // TODO: Make this WORK!
 export async function GET() {
 	return new Response(

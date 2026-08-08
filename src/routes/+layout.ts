@@ -5,7 +5,7 @@ import { defineBaseMetaTags } from 'svelte-meta-tags'; // As much as I preferred
 import favicon from '$lib/assets/favicon.svg';
 import banner from '$lib/assets/banner.png';
 
-export const prerender = true;
+export const prerender = false;
 // Prerender pages by default, can be overridden
 // by setting to false on a specific page/template
 
