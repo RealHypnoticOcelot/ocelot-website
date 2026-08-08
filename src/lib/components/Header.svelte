@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import ToggleSwitch from './ToggleSwitch.svelte';
-	import logo from "$lib/assets/favicon.svg";
+	import logo from "$lib/assets/favicon_rendered.svg";
 	import { fetchSVG } from '$lib/utils/fetchsvg';
 	import { icons, info }  from '@iconify-json/ri';
 	let { darkTheme, useHandwriting, navLinks } = $props();
