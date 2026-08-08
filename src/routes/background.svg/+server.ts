@@ -27,7 +27,7 @@ export async function GET() {
 		{
 			headers: {
 				'Content-Type': 'image/svg+xml',
-				'Cache-Control': 'no-cache'
+				'Cache-Control': 'no-store'
 			}
 		}
 	);
