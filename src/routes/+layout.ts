@@ -50,7 +50,7 @@ export const load: LayoutLoad = async ({ data, url }) => {
       { "rel": "me", "href": "https://bsky.app/profile/ocelot.lol" },
       { "rel": "me", "href": "https://steamcommunity.com/id/HypnoticOcelot" },
       { "rel": "me", "href": "https://fluxer.gg/Kpo6rpCn" },
-      { "rel": "alternate", "href": new URL("feed/1", url.origin).href }
+      { "rel": "alternate", "href": new URL("feed/1", url.origin).href, "title": siteTitle, "type": "application/atom+xml" }
     ]
   });
   return {

@@ -198,3 +198,19 @@ main img {
     display: none;
   }
 }
+/* Stuff for Atom Feed */
+feed > * {
+  display: grid;
+  align-content: center;
+  width: var(--content-width);
+  background-color: var(--default-background);
+  margin: var(--default-margin);
+  padding: var(--default-padding);
+  color: var(--color-primary);
+}
+feed :not(title, subtitle, entry, description, entry > id) {
+  display: none;
+}
+title {
+  font-weight: 700;
+}

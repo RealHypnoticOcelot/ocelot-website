@@ -7,8 +7,8 @@ export const siteTextLicense = {
 	licenseName: 'CC-BY-SA 4.0',
 	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
 	author: siteAuthor,
-	original: true,
-	modified: false,
+	original: true, // Original in this case refers to whether it originated from this site; if so, no license footer will be shown
+	modified: false, // Whether the content has been modified from the source material
 	creditLink: "",
 };
 
