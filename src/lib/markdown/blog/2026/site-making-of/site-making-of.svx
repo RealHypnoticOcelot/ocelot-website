@@ -2,6 +2,7 @@
 title: "Making of: This Website"
 author: HypnoticOcelot
 datetime: 2026-08-07T16:27:00-04:00
+updated: 2026-08-08T12:37:05-04:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
@@ -29,7 +30,7 @@ So, finally I'd created my development environment for my Svelte project! I figu
 - `tsconfig.json` - Helps IDEs determine how to treat different files in the project(for purposes like autocomplete)
 - `svelte.config.js` - Configuration for Svelte and SvelteKit
 - `vite.config.js` - Configuration for Vite, which Svelte uses under the hood
-- `.npmrc` - Node.js environment variables, see https://nodejs.org/api/cli.html#environment-variables-1
+- `env` - Node.js environment variables, see https://nodejs.org/api/cli.html#environment-variables-1
 
 Due to some of the [recent controversy](https://github.com/oven-sh/bun/pull/30412) involving Bun and its Anthropic acquisition, I actually later decided to switch to using [Node.js](https://nodejs.org/) instead, which is actually better-supported by the NixOS ecosystem anyways. That saw the removal of `bun2nix` and `bun.nix`, and the replacement of `bun.lock` with `package-lock.json`(though they're functionally the same). 
 

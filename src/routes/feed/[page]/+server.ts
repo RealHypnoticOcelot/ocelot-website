@@ -18,8 +18,7 @@ export async function GET({url, params}) {
 <?xml-stylesheet href="${style}" type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>${siteTitle}</title>
-	<subtitle>${siteDescription}
-	This is an Atom Feed. You can subscribe by copying the URL into your reader of choice. Visit https://aboutfeeds.com/ for more information.</subtitle>
+	<subtitle>${siteDescription} | This is an Atom Feed. You can subscribe by copying the URL into your reader of choice. Visit https://aboutfeeds.com/ for more information.</subtitle>
 	<id>${new URL(url.origin).href}</id>
 	${!posts.isFirstPage ? `<link rel="prev" href="${new URL(`${url.pathname}?page=${pageNumber - 1}`, url.origin)}" />` : ""}
 	${!posts.isLastPage ? `<link rel="next" href="${new URL(`${url.pathname}?page=${pageNumber + 1}`, url.origin)}" />` : ""}
@@ -32,7 +31,9 @@ export async function GET({url, params}) {
 		(post) => `
 		<entry>
 			<title>${post.title ?? '[NO TITLE]'}</title>
-			<author>${post.author ?? siteAuthor}</author>
+			<author>
+				<name>${post.author ?? siteAuthor}</name>
+			</author>
 			<id>${new URL(post.slug, url.origin)}</id>
 			<summary>${post.description ?? '[NO DESCRIPTION]'}</summary>
 			<link rel="alternate" type="text/html" href="${new URL(post.slug, url.origin)}" />
