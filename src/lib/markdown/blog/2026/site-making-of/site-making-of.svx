@@ -2,7 +2,7 @@
 title: "Making of: This Website"
 author: HypnoticOcelot
 datetime: 2026-08-07T16:27:00-04:00
-updated: 2026-08-08T12:37:05-04:00
+updated: 2026-08-08T13:16:37-04:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
@@ -62,7 +62,7 @@ Step 4   requires just a little bit of math! You need three parameters to mathem
 
 For example, let's say that `size` is 1024, `dimension` is 4, and our object's `index` is 2(which would be the third object, since JavaScript is [zero-indexed](https://en.wikipedia.org/wiki/Zero-based_numbering)). For the x coordinate, would get `Math.floor(2 / 9) * 256`, which is 0. That means our object is 0 pixels from the left side of the SVG! For the y coordinate, you would get `(2 % 4) * 256`, which is 512. That means our object is 512 pixels from the top side of the SVG. In a 2x2 grid, that would be the bottom-left object.
 
-I later added the ability to scale the size of images in their grid: instead of taking up 100% of the tile space, you can set it so that each image takes up, say, 80% of their tile size! Some extra math was required to actually center each image in their tile, but it works pretty well. If you want to see the actual implementation, check my [site's code](https://github.com/RealHypnoticOcelot/ocelot-website/blob/dd0a41e9399cd33f5dfe6d3094d7d14e1c9a9263/src/lib/utils/svg-grid.ts). Basically, every time you load the page, it fetches a .svg file, converts it into a [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme), and sets that as the page's background. There are a few ways this implementation could be improved, like supporting non-square arrangements, or being able to pick from multiple sets of images, but it works for my purposes for the time being.
+I later added the ability to scale the size of images in their grid: instead of taking up 100% of the tile space, you can set it so that each image takes up, say, 80% of their tile size! Some extra math was required to actually center each image in their tile, but it works pretty well. If you want to see the actual implementation, check my [site's code](https://github.com/RealHypnoticOcelot/ocelot-website/blob/8006e7a30f8372aac5c61adda4ca66ae2b2299de/src/lib/utils/svg-grid.ts). Basically, every time you load the page, it fetches a .svg file, converts it into a [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme), and sets that as the page's background. There are a few ways this implementation could be improved, like supporting non-square arrangements, or being able to pick from multiple sets of images, but it works for my purposes for the time being.
 
 ## Making the site
 
@@ -92,7 +92,7 @@ I later improved the post navigation behavior; previously, when you went to a bl
 
 ## Dates are hard
 
-The hardest part of this whole system was formatting the dates. I wanted to have the year, month, and day in the URL, but then I also wanted dates to be optional, and I wanted to be able to specify hours and minutes and timezones! I ended up creating [a function](https://github.com/RealHypnoticOcelot/ocelot-website/blob/adc7648ce769b40971d1f28637ad0f7db4763235/src/lib/utils/formatDate.ts) that would return UTC strings for things like the URL, and then you could also set it to use local times for things like showing the date a post was created on a page. If the user has JavaScript enabled, those dates will change to their browser's time, but I also set the `TZ='Etc/UTC'` environment variable in `.env`, so that the server's default timezone is UTC.
+The hardest part of this whole system was formatting the dates. I wanted to have the year, month, and day in the URL, but then I also wanted dates to be optional, and I wanted to be able to specify hours and minutes and timezones! I ended up creating [a function](https://github.com/RealHypnoticOcelot/ocelot-website/blob/1d4478881fa52c444e4346bae0b7dc1947844105/src/lib/utils/formatDate.ts) that would return UTC strings for things like the URL, and then you could also set it to use local times for things like showing the date a post was created on a page. If the user has JavaScript enabled, those dates will change to their browser's time, but I also set the `TZ='Etc/UTC'` environment variable in `.env`, so that the server's default timezone is UTC.
 
 ## RSS
 
