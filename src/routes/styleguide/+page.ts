@@ -7,7 +7,7 @@ export const load: PageLoad = async () => {
   try {
     const post = await import(`$lib/markdown/styleguide.svx`);
     const pageTags = definePageMetaTags({
-      title: post.metadata.title ?? "[NO TITLE]",
+      title: post.metadata.title ?? siteTitle,
       description: post.metadata?.description ?? siteDescription,
       openGraph: {
         description: post.metadata?.shortDescription ?? post.metadata?.description ?? siteShortDescription,
