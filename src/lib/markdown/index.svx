@@ -20,7 +20,7 @@ I'm super interested in these topics:
 
 I'm a university student currently on track to study law, and hopefully improve the state of digital rights/privacy legislation in America.
 
-*The views expressed on this website are mine and mine alone, unless expressly stated otherwise.*
+*The views expressed on this website are mine and mine alone, unless expressly stated.*
 ## Contact
 ***
 You can contact me through email; in an attempt to avoid LLM scrapers from collecting my email too easily, here it is encoded with B64:
