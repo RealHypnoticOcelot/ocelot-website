@@ -8,19 +8,19 @@ description: Welcome to my personal website!
 
 </header>
 
-Nice to meet you(or maybe you already know who I am)! Well, where do I begin? I'm **HypnoticOcelot** online, but most people just call me Hypno. In any case, welcome to my little corner of the internet!
+Welcome to my website! I'm **HypnoticOcelot** online, but most people just call me Hypno.
 ## About Me
 ***
-I like long walks on the beach, the summer rain, and these things too:
+I'm super interested in these topics:
 - Writing
 - The Open Internet
 - Open Standards/Interoperability
 - Linux
 - Privacy/Consumer Protections
 
-You know, that sort of thing! I'm a university student currently on track to study law, and hopefully make some positive impact on digital rights/privacy legislation in America.
+I'm a university student currently on track to study law, and hopefully improve the state of digital rights/privacy legislation in America.
 
-*The views expressed on this website are mine and mine alone, unless expressly stated.*
+*The views expressed on this website are mine and mine alone, unless expressly stated otherwise.*
 ## Contact
 ***
 You can contact me through email; in an attempt to avoid LLM scrapers from collecting my email too easily, here it is encoded with B64:
