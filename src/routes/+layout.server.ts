@@ -1,5 +1,5 @@
 import type { LayoutServerLoad } from './$types';
-import { fetchSVG } from '$lib/utils/fetchsvg'; 
+import { fetchSVG } from '$lib/utils/fetchSvg'; 
 import { icons, info } from '@iconify-json/simple-icons';
 import { shuffle } from '$lib/utils/shuffle';
 import { footerText, siteTextLicense } from '$lib/config';

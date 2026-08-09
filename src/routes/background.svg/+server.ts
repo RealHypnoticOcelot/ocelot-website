@@ -1,5 +1,5 @@
 import { shuffle } from '$lib/utils/shuffle';
-import { grid } from '$lib/utils/svg-grid';
+import { svgGrid } from '$lib/utils/svgGrid';
 
 // Keep in mind that the SVGs include a number of embedded images, which are not automatically resized.
 // As a rule of thumb, keep your images at a resolution of 512x512 or below.
@@ -8,7 +8,7 @@ export async function GET() {
   const svgSize = 512; // Kind of inconsequential, on account of the whole infinitely scaling thing
   const backgroundImages = import.meta.glob('$lib/assets/background-tiles/*', { eager: true, import: 'default', query: '?inline' });
 	// Must be inline(data URIs), because external requests aren't loaded inside of SVGs
-  const shuffledImages = grid(shuffle(Object.values(backgroundImages)), svgSize, 2, 0.9);
+  const shuffledImages = svgGrid(shuffle(Object.values(backgroundImages)), svgSize, 2, 0.9);
 	return new Response(
 		`
     <svg version="1.1"

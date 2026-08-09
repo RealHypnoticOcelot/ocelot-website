@@ -1,4 +1,4 @@
-import { getBlogPosts } from "$lib/utils/getblogposts";
+import { getBlogPosts } from "$lib/utils/getBlogPosts";
 import { defaultMaxPosts } from "$lib/config.js";
 import { error, redirect, isRedirect } from "@sveltejs/kit";
 

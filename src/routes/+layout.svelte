@@ -63,4 +63,3 @@
 </main>
 <Footer {footerButtons} {footerLinks} {footerText} />
 </div>
-<!-- <img class="fullbodyImage" src={fullbodyImage} alt={'HypnoticOcelot\'s fursona; art by ' + getFileName(fullbodyImage) }> -->

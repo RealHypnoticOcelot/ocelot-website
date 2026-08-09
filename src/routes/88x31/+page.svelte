@@ -1,6 +1,6 @@
 <script>
   import { siteFQDN } from '$lib/config';
-  import { getFileName } from '$lib/utils/getFileName.js';
+  import { getFileName } from '$lib/utils/getFileName';
   const linkButtons = import.meta.glob('$lib/assets/88x31/*', { eager: true, import: 'default' });
 </script>
 

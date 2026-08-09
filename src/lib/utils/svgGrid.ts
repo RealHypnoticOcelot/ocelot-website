@@ -1,4 +1,4 @@
-export const grid = (array: Array<any>, size: number, dimension: number = 0,  scale: number = 1): string => {
+export const svgGrid = (array: Array<any>, size: number, dimension: number = 0,  scale: number = 1): string => {
   // If the dimension would be greater than the amount of available images, or if the dimension is negative, make it zero
   // Otherwise, just round to the nearest whole number
   dimension = (Math.pow(dimension, 2) > array.length || dimension < 0) ? 0 : Math.round(dimension);

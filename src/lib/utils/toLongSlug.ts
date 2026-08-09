@@ -1,5 +1,5 @@
 import { formatDate } from "./formatDate";
-import type { PostMetadata } from "./getblogposts";
+import type { PostMetadata } from "./getBlogPosts";
 import { getFileName } from "./getFileName";
 
 export const toLongSlug = (filename: string, postData: PostMetadata): string => {

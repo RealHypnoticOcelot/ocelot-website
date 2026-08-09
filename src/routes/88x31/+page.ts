@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { definePageMetaTags } from 'svelte-meta-tags';
 
-export const load: PageLoad = async ({ url }) => {
+export const load: PageLoad = async () => {
   try {
     const pageTags = definePageMetaTags({
       title: '88x31',

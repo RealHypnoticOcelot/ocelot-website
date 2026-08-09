@@ -2,7 +2,7 @@
 title: "Making of: This Website"
 author: HypnoticOcelot
 datetime: 2026-08-07T16:27:00-04:00
-updated: 2026-08-08T13:16:37-04:00
+updated: 2026-08-08T20:54:53-04:00
 description: A somewhat-technical summary of how this site was made!
 license: CC-BY-SA 4.0
 ---
@@ -116,10 +116,10 @@ One thing I was hoping to do on this site was replace the default cursor with a 
 
 ## Actually Deploying
 
-My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [dockerTools.buildImage](https://nixos.org/manual/nixpkgs/stable/#ssec-pkgs-dockerTools-buildImage) tool. I then fumbled around with [GitHub Actions](https://github.com/features/actions), something I've never used before, to have a Docker container built and pushed to GitHub's Docker container registry. I'm sure that there's a more efficient way to do it, but it works! Maybe one day in the future, I'll know more about GitHub Actions, and go back to clean that up.
+My laptop runs Nix, but the server I run things on does not! My server uses [Docker](https://docker.com/) containers, so what I did was update my `flake.nix` file, and created a new package that generates a Docker image using the [dockerTools.buildImage](https://nixos.org/manual/nixpkgs/stable/#ssec-pkgs-dockerTools-buildImage) tool. I then fumbled around with [GitHub Actions](https://github.com/features/actions), something I've never used before, to have a Docker container built and pushed to GitHub's Docker container registry. I'm sure that there's a more efficient way to have done it, but it works! Maybe one day in the future, I'll know more about GitHub Actions(or maybe switch to something like Codeberg), and go back to clean that up.
 
 ## Final thoughts
 
 Making this site was fun! It was definitely a challenge to make things as idiomatic as possible without resorting to hacky fixes(and I still had to resort to them in some cases), but I think it was worth doing in the end. My biggest concern right now is that some of the art on the site may be a bit heavy for users with poor data connections, but hopefully once [`prefers-reduced-data`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) is supported by browsers, that'll be less of an issue.
 
-HTML and CSS has gotten a lot more capable over time! If I tried to make this site maybe 5-10 years ago, I'd probably have to resort to some CSS/JavaScript framework, and it'd almost certainly be more difficult to make the site usable for people who don't use JavaScript. I'm looking forward to seeing the web evolve even more over time.
+HTML and CSS has gotten a lot more capable over time! If I tried to make this site maybe 5-10 years ago, I'd probably have to resort to some CSS/JavaScript framework, and it'd almost certainly be more difficult to make the site usable for people who don't use JavaScript. I'm looking forward to seeing the web evolve even more over time. All said, you can find the code to this site [here](https://github.com/RealHypnoticOcelot/ocelot-website).

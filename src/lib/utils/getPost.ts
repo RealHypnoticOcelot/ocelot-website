@@ -1,6 +1,6 @@
 import type { RouteParams } from "$app/types";
 import { formatDate } from "./formatDate";
-import type { PostFile } from "./getblogposts";
+import type { PostFile } from "./getBlogPosts";
 import { getFileName } from "./getFileName";
 import { shuffle } from "./shuffle";
 
