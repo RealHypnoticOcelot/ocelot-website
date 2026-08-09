@@ -48,14 +48,17 @@ body, feed {
   symbols: "\2022";
   suffix: " ";
 }
+/* A good guideine for the following two rules is to have the background size be the
+grid's dimension times 10 for the former rule, and the dimensions times 5 for the latter.
+(e.g. a grid with a dimension of 2 would have 20vh and 10vw respectively.) */
 @media (max-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or smaller */
   :root {
-    --background-size: 20vh;
+    --background-size: 30vh;
   }
 }
 @media (min-aspect-ratio: 16/9) { /* Screens with an aspect ratio of 16:9 or larger */
   :root {
-    --background-size: 10vw;
+    --background-size: 15vw;
   }
 }
 @media (prefers-reduced-transparency: reduce) {
