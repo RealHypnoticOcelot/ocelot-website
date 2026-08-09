@@ -1,5 +1,6 @@
 ---
 title: "Licenses"
+description: A list of the licenses in use on this website.
 ---
 <header>
 

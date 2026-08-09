@@ -1,5 +1,6 @@
 ---
 title: "Style Guide"
+description: The style guide for elements on this site.
 license: {
 	licenseName: 'CC-BY-SA 4.0',
 	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',

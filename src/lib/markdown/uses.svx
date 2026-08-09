@@ -1,5 +1,6 @@
 ---
 title: "Uses"
+description: A list of applications and tools I use day-to-day!
 ---
 <header>
 

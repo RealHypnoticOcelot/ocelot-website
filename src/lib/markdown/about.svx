@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: Extra information about me and my site!
 ---
 <header>
 

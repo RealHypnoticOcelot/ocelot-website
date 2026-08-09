@@ -1,7 +1,7 @@
 export const siteTitle = 'HypnoticOcelot';
 export const siteDescription = 'Welcome to my personal website!';
 export const siteFQDN = 'ocelot.lol';
-export const siteShortDescription = 'I do things';
+export const siteShortDescription = 'Welcome to my personal website!';
 export const siteAuthor = 'HypnoticOcelot';
 export const siteTextLicense = {
 	licenseName: 'CC-BY-SA 4.0',

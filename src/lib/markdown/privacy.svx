@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy"
+description: I don't care about your data!
 ---
 <header>
 

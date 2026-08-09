@@ -1,5 +1,6 @@
 ---
 title: "Hi!"
+description: Welcome to my personal website!
 ---
 <header>
 
