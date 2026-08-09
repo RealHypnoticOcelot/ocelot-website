@@ -8,8 +8,7 @@ export const load: PageLoad = async () => {
       title: '88x31',
       description: "A collection of 88x31 buttons.",
       openGraph: {
-        title: '88x31',
-        description: "My 88x31 buttons!",
+        description: "A collection of 88x31 buttons.",
       }
     });
     return {

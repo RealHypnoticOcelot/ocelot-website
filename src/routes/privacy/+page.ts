@@ -10,7 +10,6 @@ export const load: PageLoad = async () => {
       title: post.metadata.title ?? "[NO TITLE]",
       description: post.metadata?.description ?? siteDescription,
       openGraph: {
-        title: post.metadata?.title ?? siteTitle,
         description: post.metadata?.shortDescription ?? post.metadata?.description ?? siteShortDescription,
       }
     });

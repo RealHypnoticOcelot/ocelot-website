@@ -37,6 +37,9 @@ export const load: LayoutLoad = async ({ data, url }) => {
         }
       ]
     },
+    twitter: {
+      cardType: 'summary_large_image' // Have the og:image show up large on Discord; thanks Advaith!
+    },
     additionalMetaTags: [
       { "name": "author", "content": siteAuthor },
       { "name": "theme-color", "content": "#000000" },
