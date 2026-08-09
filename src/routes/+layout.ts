@@ -30,12 +30,16 @@ export const load: LayoutLoad = async ({ data, url }) => {
       locale: 'en_US',
       description: siteShortDescription, // Short description
       siteName: siteTitle,
-      images: [
-        {
-          url: banner,
-          alt: "Sketches of HypnoticOcelot's fursona, done by Unremy"
-        }
-      ]
+      // images: [
+      //   {
+      //     url: banner,
+      //     alt: "Sketches of HypnoticOcelot's fursona, done by Unremy"
+      //   }
+      // ]
+    },
+    twitter: {
+      image: banner,
+      imageAlt: "Sketches of HypnoticOcelot's fursona, done by Unremy"
     },
     additionalMetaTags: [
       { "name": "author", "content": siteAuthor },
