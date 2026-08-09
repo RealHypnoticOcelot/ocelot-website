@@ -5,7 +5,7 @@ import type { PageLoad } from "./$types";
 import { definePageMetaTags } from "svelte-meta-tags";
 import { siteTitle, siteDescription, siteShortDescription } from "$lib/config";
 
-export const load: PageLoad = async ({ params, data }) => {
+export const load: PageLoad = async ({ params }) => {
   try {
     const post = await getPost(params);
     const postDate = formatDate(post.metadata.datetime);
