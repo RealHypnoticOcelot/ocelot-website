@@ -58,5 +58,9 @@ export const footerText = [
 	{
 		text: 'Are you waiting to wake up?',
 		attribution: "STOMACH BOOK - Are You Waiting? (2024)"
+	},
+	{
+		text: 'When bad men combine, the good must associate; else they will fall, one by one, an unpitied sacrifice in a contemptible struggle.',
+		attribution: 'Thoughts on the Cause of the Present Discontents (1770)'
 	}
 ]
