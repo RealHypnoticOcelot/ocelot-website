@@ -10,7 +10,7 @@
   */
   color-scheme: light dark;
 	--tile-background: url("/background.svg");
-  --fullbody-background: url("/fullbody.png");
+  --fullbody-background: url("/fullbody");
   --bg-primary: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); 
   --bg-secondary: light-dark(rgb(245, 245, 245), rgb(10, 10, 10));
   --color-primary: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));

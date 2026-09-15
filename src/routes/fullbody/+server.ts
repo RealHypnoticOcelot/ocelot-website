@@ -6,7 +6,7 @@ export async function GET() {
     {
       status: 302,
       headers: {
-        location: fullbodyImage
+        location: fullbodyImage,
       }
     }
   );
