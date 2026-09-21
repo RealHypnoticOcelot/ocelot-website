@@ -92,7 +92,7 @@ a {
   color: var(--color-highlight);
   white-space: nowrap;
 }
-a:visited {
+main a:visited {
   color: var(--color-secondary);
 }
 input, progress {
