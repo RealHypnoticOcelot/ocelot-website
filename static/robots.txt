@@ -34,9 +34,6 @@ Allow: /
 User-agent: TurnitinBot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
-
 # Block Anthropic (Claude)
 User-agent: ClaudeBot
 Disallow: /
