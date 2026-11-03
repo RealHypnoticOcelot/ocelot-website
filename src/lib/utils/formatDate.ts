@@ -9,6 +9,7 @@ export const formatDate = (dateInput: string | number | undefined, local: boolea
   try {
     const dateObject = new Date(dateInput ?? ''); // If you plan on passing Unix timestamps, make sure to use milliseconds and not seconds.
     // You can convert from seconds to milliseconds by multiplying by 1000 (or just adding three zeroes at the end)
+    // Usually, though, just pass "new Date().toISOString()", or an ISO 8601-compatible string
     const dateOptions: Intl.DateTimeFormatOptions = {
       year: "numeric",
       month: "2-digit",

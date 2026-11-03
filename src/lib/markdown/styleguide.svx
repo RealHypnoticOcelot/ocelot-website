@@ -37,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
 
-> "**This is a blockquote**. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
+> "**This is a blockquote** [with link](#content). Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
 
 The [a element](#content), [external a element](https://example.com), and [a element with title](#content 'Example Title') examples
 
@@ -61,9 +61,9 @@ The *i element* example
 
 The <ins>ins element</ins> example
 
-The <kbd>kbd element</kbd> example
+The <kbd>kbd element [with link](#content)</kbd> example
 
-The <mark>mark element</mark> example
+The <mark>mark element [with link](#content)</mark> example
 
 The <q>q element</q> example
 

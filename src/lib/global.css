@@ -91,9 +91,6 @@ a {
   color: var(--color-highlight);
   white-space: nowrap;
 }
-main a:visited {
-  color: var(--color-secondary);
-}
 input, progress {
   accent-color: var(--color-highlight);
 }
@@ -147,6 +144,9 @@ table * {
 }
 thead, blockquote, mark {
   background-color: var(--color-highlight);
+  color: var(--bg-primary);
+}
+thead a, blockquote a, mark a {
   color: var(--bg-primary);
 }
 thead *::selection, blockquote *::selection, mark::selection {
