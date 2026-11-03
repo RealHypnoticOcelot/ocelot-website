@@ -1,0 +1,22 @@
+---
+title: "In Favor of Inconvenience"
+slug: in-favor-of-inconvenience
+author: HypnoticOcelot
+datetime: 2026-11-03T21:52:16.770Z
+description: "It might seem conterintuitive! (BOLF Blogvember #3)"
+license: CC-BY-SA 4.0
+---
+> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **30 words**.
+
+As a continuation to my [previous post](/blog/2026/11/03/principled-people) about being a principled individual, I wanted to expand upon what somebody can do to align their actions with their beliefs in their everyday life, and how somebody can avoid being the "moderate" that Martin Luther King, Jr. condemns. The answer is inconvenience! Many of the systems in modern society with hidden drawbacks exist because they are convenient.
+
+Short-form content, for instance, is a quick and easy way to be entertained, be (or rather feel) informed on news, or to learn something about something. I'm not condemning the medium entirely, but in order to engage with information, you have to do it for longer than 60 seconds; short-form media doesn't really help you. As short-form content exists today, it does nothing to foster actual and meaningful engagement(which is what many social media services providing this content purport to promote!).
+
+Streaming services are convenient, but they also exist to eliminate consumer ownership of media. As options to buy physical versions of media grow more and more scarce, the only way to access media will be to receive a revocable, non-transferable license to a piece of media that can be [taken away](https://www.techdirt.com/2026/07/15/sony-deletes-a-bunch-more-movies-from-the-accounts-of-people-who-bought-them/) at the whims of a company or licensor.
+
+Not to mention the countless assaults on privacy the typical internet user encounters on a daily basis! One owes it to oneself to use the internet and devices in a measured and conscious manner. I won't say it's easy or simple to do, nor is it a change that can be made in one day, but here are some easy things to do in your free time:
+
+- Use [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)(Free and Open Source Software) applications whenever possible
+- Go through your email and unsubscribe from every service you don't need emails from
+- Abstain from services(as much as possible) that collect information for revenue
+- Support hardware/software that is interoperable, or uses open protocols
