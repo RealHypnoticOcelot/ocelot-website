@@ -27,7 +27,7 @@
         pname = packageName;
         version = "0.0.1";
         src = ./.;
-        npmDepsHash = "sha256-2wvXcdGw7109fspsxGp1g8O6SRljsGMOW6V4/9FNYWg="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+        npmDepsHash = "sha256-aKr3ELVol2Udh/BASRGT20ulW/UzIKWWlTo1Kw4u/Uk="; # Placeholder: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
         installPhase = ''
           runHook preInstall
           mkdir -p $out/dist
