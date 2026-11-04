@@ -9,7 +9,7 @@
     color-shadow: The color for a shadow on the site, should be an RGB color of <20% opacity
   */
   color-scheme: light dark;
-	--tile-background: url("/background.svg");
+  --tile-background: url("/background.svg");
   --fullbody-background: url("/fullbody");
   --bg-primary: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); 
   --bg-secondary: light-dark(rgb(245, 245, 245), rgb(10, 10, 10));
