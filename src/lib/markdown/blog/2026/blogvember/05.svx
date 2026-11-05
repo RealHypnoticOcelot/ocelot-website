@@ -2,8 +2,8 @@
 title: "Why Use Web Feeds?"
 slug: why-use-web-feeds
 author: HypnoticOcelot
-datetime: 2026-11-04T19:01:38.355Z
-description: "Give it a shot! (BOLF Blogvember #5)"
+datetime: 2026-11-05T19:22:04.879Z
+description: "Web feeds can be a great way to access information! (BOLF Blogvember #5)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',
 	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
