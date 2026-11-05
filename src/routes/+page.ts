@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { definePageMetaTags } from 'svelte-meta-tags';
-import { siteTitle, siteDescription, siteShortDescription, siteTextLicense } from '$lib/config';
+import { siteTitle, siteDescription, siteShortDescription } from '$lib/config';
 
 export const load: PageLoad = async () => {
   try {
@@ -15,7 +15,7 @@ export const load: PageLoad = async () => {
     });
     return {
       content: post.default,
-      license: post.metadata.license ?? siteTextLicense,
+      meta: post.metadata,
       ...pageTags
     };
   } catch {

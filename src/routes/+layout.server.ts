@@ -2,7 +2,7 @@ import type { LayoutServerLoad } from './$types';
 import { fetchSVG } from '$lib/utils/fetchSvg'; 
 import { icons, info } from '@iconify-json/simple-icons';
 import { shuffle } from '$lib/utils/shuffle';
-import { footerText, siteTextLicense } from '$lib/config';
+import { footerText } from '$lib/config';
 
 const navLinks = [
 	{
@@ -66,7 +66,6 @@ export const load: LayoutServerLoad = async ({fetch, locals}) => {
 		footerButtons,
 		footerLinks,
 		footerText: shuffle(footerText)[0],
-		license: siteTextLicense,
 		darkTheme: locals.theme, // From hooks.server.ts
     useHandwriting: locals.useHandwriting, // From hooks.server.ts
   };

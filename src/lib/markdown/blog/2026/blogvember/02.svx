@@ -4,7 +4,13 @@ slug: principled-people
 author: HypnoticOcelot
 datetime: 2026-11-03T18:26:17.273Z
 description: "Where is our resolve? (BOLF Blogvember #2)"
-license: CC-BY-SA 4.0
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
 ---
 > This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **25 words**.
 

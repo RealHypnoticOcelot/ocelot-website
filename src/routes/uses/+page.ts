@@ -15,7 +15,7 @@ export const load: PageLoad = async () => {
     });
     return {
       content: post.default,
-      license: post.metadata.license ?? siteTextLicense,
+      meta: post.metadata,
       ...pageTags
     };
   } catch {

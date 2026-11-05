@@ -4,7 +4,13 @@ slug: beginning-bolf-blogvember
 author: HypnoticOcelot
 datetime: 2026-11-03T16:46:07.336Z
 description: "I'm a little late to this month-long writing challenge! (BOLF Blogvember #1)"
-license: CC-BY-SA 4.0
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
 ---
 > This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **20 words**.
 
