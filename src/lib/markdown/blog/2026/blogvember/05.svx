@@ -12,7 +12,11 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **40 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **40 words**.* 
+
+</aside>
 
 Web feeds! If you're somebody that likes to frequent blogs or news sites(and if you're not, you should be), then web feeds are for you. Put simply, web feeds are a standardized way to pull the posts/content from websites. Once you find a website's [RSS](https://en.wikipedia.org/wiki/RSS) or [Atom](https://en.wikipedia.org/wiki/Atom_(web_standard)) feed, you can input it into your feed reader of choice, and future posts will be automatically fetched and saved onto your feed reader. This way, you can aggregate the posts from all of the sites you frequent in one place! It's a great way to curate the content you see, and a great alternative to using social media to discover news.
 

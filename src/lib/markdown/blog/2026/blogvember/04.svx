@@ -12,7 +12,11 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **35 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **35 words**.* 
+
+</aside>
 
 I know it's not easy. I used TikTok for the longest time, and it took me years to finally stop using it. I think I probably re-installed it three or four times before I finally got rid of it for good! You don't need social media, though. You don't need to engage in the discourse on whatever topics the algorithm feeds you. You don't need to scroll for a few minutes in a waiting room, or while you're in line, or when you're just a little bored.
 

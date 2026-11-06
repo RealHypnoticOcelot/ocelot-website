@@ -12,7 +12,11 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **30 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **30 words**.* 
+
+</aside>
 
 As a continuation to my [previous post](/blog/2026/11/03/principled-people) about being a principled individual, I wanted to expand upon what somebody can do to align their actions with their beliefs in their everyday life, and how somebody can avoid being the "moderate" that Martin Luther King, Jr. condemns. The answer is inconvenience! Many of the systems in modern society with hidden drawbacks exist because they are convenient.
 

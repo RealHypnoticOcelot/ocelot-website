@@ -1,9 +1,9 @@
 ---
-title: "HeySpace and Accessibility"
-slug: heyspace-and-accessibility
+title: "SpaceHey and Accessibility"
+slug: spacehey-and-accessibility
 author: HypnoticOcelot
 datetime: 2026-11-06T18:31:15.196Z
-updated: 2026-11-06T21:54:57.291Z
+updated: 2026-11-06T23:40:54.301Z
 description: "The old web wasn't all that accessible! (BOLF Blogvember #6)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',
@@ -13,7 +13,11 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **45 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **45 words**.* 
+
+</aside>
 
 One thing I neglected to mention in detail when I wrote about [making this website](/blog/2026/08/07/site-making-of) was the considerations I made in terms of accessibility. When I was developing this site, I was very careful to create a color palette(for both light and dark themes) that would contrast well. I added a ["Skip to Content" button](https://www.makethingsaccessible.com/guides/creating-a-skip-to-content-link/), ensured my tabbing order was as expected, and added [alt text](https://en.wikipedia.org/wiki/Alt_attribute) to images.
 
@@ -32,7 +36,11 @@ For what it's worth, HeySpace users aren't(and shouldn't be expected to be) web 
 
 HeySpace's design decisions may also be to blame. HeySpace uses a smaller font size than is typical on the internet, and the default layout doesn't meet certain [WCAG](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) guidelines for contrast between background color and text color. Additionally, as part of the "old web" style of the website, the HTML/CSS fields are in plaintext, and lack warnings for syntax and accessibility.
 
-> It's worth nothing that [WCAG 2.1 guidelines for contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio), while useful, are outdated and fail to account for readability in some cases. New algorithms, such as [APCA](https://www.cedc.tools/article.html), may be more effective at improving readability, and may be incorporated into new versions of the WCAG.
+<aside>
+
+It's worth nothing that [WCAG 2.1 guidelines for contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio), while useful, are outdated and fail to account for readability in some cases. New algorithms, such as [APCA](https://www.cedc.tools/article.html), may be more effective at improving readability, and may be incorporated into new versions of the WCAG.
+
+</aside>
 
 All this to say, if you're designing or styling a website, try your best to adhere to accessibility guidelines! Watch out for contrast, and add alt text to your images. Your browser should have an accessibility tab, which you can find [here](https://developer.chrome.com/docs/devtools/accessibility/reference) if your browser is (unfortunately) Chromium-based, and [here](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/) if your browser is Firefox-based. During your website design process, keep in mind people with low vision, blindness, or otherwise in need of assistive technology!
 

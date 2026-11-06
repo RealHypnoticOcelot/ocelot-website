@@ -12,6 +12,10 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **20 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **20 words**.* 
+
+</aside>
 
 It's November 3rd as I write this, so I'm just a little bit behind! For the sake of completeness, I'm going to have a short blog post for days #1 and #2, and this is my post for the former. I'll just briefly describe the challenge: you make a blog post every day, and the word minimum increases by 5 words each time. Simple as that! I would say see you tomorrow, but I'm writing this on the same day I write the next two posts.

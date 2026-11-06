@@ -12,7 +12,11 @@ license: {
 	creditLink: "",
 }
 ---
-> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **25 words**.
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **25 words**.* 
+
+</aside>
 
 Election day in Michigan is today, and as I was researching my candidates for the coming election, I came across [this campaign video](https://www.facebook.com/watch/?v=1370046751907300) posted by John James, Republican gubernatorial candidate. To save you the anguish of having to click on a Facebook link, I'll tell you what happened in the clip.
 
