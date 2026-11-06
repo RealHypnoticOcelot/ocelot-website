@@ -1,0 +1,36 @@
+---
+title: "HeySpace and Accessibility"
+slug: heyspace-and-accessibility
+author: HypnoticOcelot
+datetime: 2026-11-06T18:31:15.196Z
+description: "The old web wasn't all that accessible! (BOLF Blogvember #6)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+> This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **45 words**.
+
+One thing I neglected to mention in detail when I wrote about [making this website](/blog/2026/08/07/site-making-of) was the considerations I made in terms of accessibility. When I was developing this site, I was very careful to create a color palette(for both light and dark themes) that would contrast well. I added a ["Skip to Content" button](https://www.makethingsaccessible.com/guides/creating-a-skip-to-content-link/), ensured my tabbing order was as expected, and added [alt text](https://en.wikipedia.org/wiki/Alt_attribute) to images.
+
+A friend of mine recently gave me an invite to [SpaceHey](https://spacehey.com/), and the whole gimmick of the site is that it's sort of MySpace, old-web, 2000's internet-like. On your profile page, you're allowed to put in custom HTML and CSS elements, which lets you pretty much entirely re-style the site as you'd like. I spent some time poking through some random profiles on the site, and so many pages are just an accessibility nightmare! Here's some of the highlights:
+
+- Profiles that go translucent when you're not hovering over them
+- CRT effects that just obscure everything
+- Pages that constantly bob up and down
+- GIF files that take up the entire screen for multiple seconds on load
+- GIF backgrounds that make text near-impossible to read
+- Use of Unicode characters that look like English characters but aren't
+
+I even saw use of the `<marquee>` tag, which has been [deprecated since 1996](https://www.w3.org/People/Raggett/book4/ch02.html), and is [trivially reproducible with CSS](https://en.wikipedia.org/wiki/Marquee_element)! Granted, not all(or even most) of these pages were bad; I saw one super cool album display, where all of the albums were lined up as if they were on a shelf: you'd hover over an album cover, and it'd reveal the full cover. That one was pretty neat!
+
+For what it's worth, HeySpace users aren't(and shouldn't be expected to be) web developers. Web accessibility is largely invisible, and many people may not even know that accessibility is something they need to consider. Not only that, but many HeySpace profiles are based off of pre-made "Layouts" shared by other users, which might not follow accessibility standards in the first place.
+
+HeySpace's design decisions may also be to blame. HeySpace uses a smaller font size than is typical on the internet, and the default layout doesn't meet certain [WCAG](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) guidelines for contrast between background color and text color. Additionally, as part of the "old web" style of the website, the HTML/CSS fields are in plaintext, and lack warnings for syntax and accessibility.
+
+> Aside: It's worth nothing that [WCAG 2.1 guidelines for contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio), while useful, are outdated and fail to account for readability in some cases. New algorithms, such as [APCA](https://www.cedc.tools/article.html), may be more effective at improving readability, and may be incorporated into new versions of the WCAG.
+
+All this to say, if you're designing or styling a website, try your best to adhere to accessibility guidelines! Watch out for contrast, and add alt text to your images. Your browser should have an accessibility tab, which you can find [here](https://developer.chrome.com/docs/devtools/accessibility/reference) if your browser is (unfortunately) Chromium-based, and [here](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/) if your browser is Firefox-based. During your website design process, keep in mind people with low vision, blindness, or otherwise in need of assistive technology!

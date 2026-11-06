@@ -9,8 +9,6 @@
     color-shadow: The color for a shadow on the site, should be an RGB color of <20% opacity
   */
   color-scheme: light dark;
-  --tile-background: url("/background.svg");
-  --fullbody-background: url("/fullbody");
   --bg-primary: light-dark(rgb(255, 255, 255), rgb(0, 0, 0)); 
   --bg-secondary: light-dark(rgb(245, 245, 245), rgb(10, 10, 10));
   --color-primary: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));
@@ -26,6 +24,9 @@
   --box-shadow: 0.1em 0.1em 0.5em var(--color-shadow);
   scrollbar-color: var(--color-highlight) var(--bg-primary);
   line-height: 1.5em;
+  /* Other non-styling variables */
+  --tile-background: url("/background.svg");
+  --fullbody-background: url("/fullbody");
 }
 body, feed {
   margin: auto;
