@@ -14,8 +14,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const response = await resolve(event, { 
     preload: ({ type }) => type === 'js' || type === 'css',
     transformPageChunk: ({ html }) => {
-      html = html.replace('darktheme=""', `darktheme="${theme}"`);
-      html = html.replace('usehandwriting=""', `usehandwriting="${useHandwriting}"`);
+      html = html.replace('data-darktheme=""', `data-darktheme="${theme}"`);
+      html = html.replace('data-usehandwriting=""', `data-usehandwriting="${useHandwriting}"`);
       return html
     }
   });

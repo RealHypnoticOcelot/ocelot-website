@@ -40,17 +40,17 @@
 {@html backgroundCSS}
 
 <style>
-	:global(:root[darktheme='true']) {
+	:global(:root[data-darktheme='true']) {
 		color-scheme: dark;
 	}
-	:global(:root[darktheme='false']) {
+	:global(:root[data-darktheme='false']) {
 		color-scheme: light;
 	}
-	:global(:root[usehandwriting='true']) {
+	:global(:root[data-usehandwriting='true']) {
 		--default-font: 'Hypnoticocelot', "Liberation Sans", "Helvetica Neue", "Noto Sans", "Open Sans", sans-serif;
 		font-weight: bold;
 	}
-	:global(:root[usehandwriting='true'] ul) {
+	:global(:root[data-usehandwriting='true'] ul) {
 		list-style-type: handwriting-circle;
 	}
 </style>

@@ -45,7 +45,7 @@
   action="/?/setCustomization&checkedType={checkedType}&value={newChecked}&redirect={page.url.pathname}"
   use:enhance={() => {
     // Optimistically update the theme
-    document.documentElement.setAttribute(checkedType, newChecked.toString());
+    document.documentElement.setAttribute("data-" + checkedType, newChecked.toString());
     
     return async ({ update }) => {
       // Apply the form response
