@@ -159,14 +159,14 @@ table * {
   padding: 1em;
   text-align: center;
 }
-thead, blockquote, mark, aside {
+thead, blockquote, mark {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
 }
-thead :any-link, blockquote :any-link, mark :any-link, aside :any-link {
+thead :any-link, blockquote :any-link, mark :any-link {
   color: var(--bg-primary);
 }
-thead *::selection, blockquote *::selection, mark::selection, mark *::selection, aside *::selection{
+thead *::selection, blockquote *::selection, mark::selection, mark *::selection {
   background-color: var(--color-primary);
   color: var(--bg-secondary);
 }
@@ -182,6 +182,10 @@ blockquote, aside {
 }
 blockquote > *, aside > * {
   margin: 0;
+}
+aside {
+  border: 0.25em var(--color-highlight) solid;
+  background-color: var(--bg-secondary);
 }
 body > div > * {
   box-sizing: border-box;
