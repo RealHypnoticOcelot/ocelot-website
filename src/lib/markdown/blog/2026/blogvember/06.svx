@@ -3,6 +3,7 @@ title: "HeySpace and Accessibility"
 slug: heyspace-and-accessibility
 author: HypnoticOcelot
 datetime: 2026-11-06T18:31:15.196Z
+updated: 2026-11-06T21:54:57.291Z
 description: "The old web wasn't all that accessible! (BOLF Blogvember #6)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',
@@ -31,6 +32,10 @@ For what it's worth, HeySpace users aren't(and shouldn't be expected to be) web 
 
 HeySpace's design decisions may also be to blame. HeySpace uses a smaller font size than is typical on the internet, and the default layout doesn't meet certain [WCAG](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) guidelines for contrast between background color and text color. Additionally, as part of the "old web" style of the website, the HTML/CSS fields are in plaintext, and lack warnings for syntax and accessibility.
 
-> Aside: It's worth nothing that [WCAG 2.1 guidelines for contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio), while useful, are outdated and fail to account for readability in some cases. New algorithms, such as [APCA](https://www.cedc.tools/article.html), may be more effective at improving readability, and may be incorporated into new versions of the WCAG.
+> It's worth nothing that [WCAG 2.1 guidelines for contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio), while useful, are outdated and fail to account for readability in some cases. New algorithms, such as [APCA](https://www.cedc.tools/article.html), may be more effective at improving readability, and may be incorporated into new versions of the WCAG.
 
 All this to say, if you're designing or styling a website, try your best to adhere to accessibility guidelines! Watch out for contrast, and add alt text to your images. Your browser should have an accessibility tab, which you can find [here](https://developer.chrome.com/docs/devtools/accessibility/reference) if your browser is (unfortunately) Chromium-based, and [here](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/) if your browser is Firefox-based. During your website design process, keep in mind people with low vision, blindness, or otherwise in need of assistive technology!
+
+---
+
+*(By the way, one other thing I noticed on SpaceHey was the use of custom cursors. My [CSS Working Group proposal](https://github.com/w3c/csswg-drafts/issues/13869) would make it trivial to have more dynamic cursors that properly react when you hover over different elements. If you're interested in this proposal, you're welcome to [add a comment](https://github.com/w3c/csswg-drafts/issues/13869#comment-composer-heading) providing support(or dissent) for the proposal, why, and a potential use-case if you have one!)*

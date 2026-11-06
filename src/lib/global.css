@@ -88,9 +88,25 @@ ul {
 ul ul {
   padding-left: 1em;
 }
-a {
+:any-link {
   color: var(--color-highlight);
   white-space: nowrap;
+}
+/*
+For some reason, the computed color (at least in Firefox) of text-decorated
+elements don't change when you select them. If you don't re-specify the
+decoration like below, it'll use that computed color, and not the element's
+highlight color.
+
+For example: f you have an <a> element that's black-on-white usually, but
+white-on-black when selected, then the underline will remain black when
+you select it, and be functionally invisible unless you add CSS like below.
+*/
+:any-link::selection, u::selection {
+  text-decoration: underline;
+}
+s::selection {
+  text-decoration: line-through;
 }
 input, progress {
   accent-color: var(--color-highlight);
@@ -98,7 +114,7 @@ input, progress {
 input, button {
   font-weight: normal;
 }
-mark, *::selection {
+*::selection {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
 }
@@ -111,7 +127,7 @@ kbd {
 kbd:active {
   box-shadow: none;
 }
-kbd::selection {
+kbd::selection, kbd *::selection {
   color: var(--color-primary);
   background-color: var(--color-tertiary);
 }
@@ -147,10 +163,10 @@ thead, blockquote, mark {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
 }
-thead a, blockquote a, mark a {
+thead :any-link, blockquote :any-link, mark :any-link {
   color: var(--bg-primary);
 }
-thead *::selection, blockquote *::selection, mark::selection {
+thead *::selection, blockquote *::selection, mark::selection, mark *::selection {
   background-color: var(--color-primary);
   color: var(--bg-secondary);
 }
@@ -163,7 +179,6 @@ tbody {
 blockquote {
   margin: auto;
   padding: 1em;
-  font-style: italic;
 }
 blockquote > * {
   margin: 0;
