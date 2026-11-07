@@ -101,6 +101,9 @@ highlight color.
 For example: f you have an <a> element that's black-on-white usually, but
 white-on-black when selected, then the underline will remain black when
 you select it, and be functionally invisible unless you add CSS like below.
+
+The only issue with this technique is that elements you remove the
+text-decoration from will get it back when you highlight them. Not the worst!
 */
 :any-link::selection, u::selection {
   text-decoration: underline;
