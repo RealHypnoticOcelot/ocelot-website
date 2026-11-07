@@ -49,11 +49,12 @@
 		left: -1000px;
 	}
 	#skip {
-		position: fixed;
-		top: 0;
-		left: 0;
+		position: initial;
+		justify-content: center;
 		background-color: var(--bg-primary);
-		transform: translatey(0);
+		padding: var(--default-padding);
+		margin: var(--default-margin);
+		width: 100%;
 	}
 	fieldset {
 		justify-content: center;

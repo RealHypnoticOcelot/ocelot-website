@@ -17,6 +17,11 @@
     margin-left: calc(var(--size, 4em) / 8);
     margin-right: calc(var(--size, 4em) / 8);
   }
+  button:focus-visible {
+    background-color: var(--color-highlight);
+    color: var(--bg-primary);
+    outline-color: var(--bg-primary);
+  }
   button {
     cursor: pointer;
     border: none;
@@ -30,15 +35,6 @@
     color: var(--color-primary);
   }
 </style>
-
-{#if checked === 'true'}
-<style>
-  button {
-    margin: 0 0 0 calc(var(--size, 4em) / 2);
-    font-family: var(--onFont, var(--default-font))
-  }
-</style>
-{/if}
 
 <form
   method="POST" 

@@ -24,8 +24,8 @@
 	a :global {
 		svg {
 			vertical-align: baseline;
-      width: 3em;
-      height: 3em;
+      width: inherit;
+			height: inherit;
 		}
 	}
 	#socialButtons {
@@ -34,6 +34,11 @@
 	}
 	#socialButtons a {
 		color: var(--color-primary);
+		width: 3em;
+		height: 3em;
+	}
+	#socialButtons a:focus-visible {
+		color: var(--color-highlight);
 	}
 	#footerLinks a {
 		padding: 0 1em 0 1em;

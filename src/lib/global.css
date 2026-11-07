@@ -121,6 +121,9 @@ input, button {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
 }
+*:focus-visible {
+  outline: var(--color-highlight) 0.2em solid;
+}
 kbd {
   border: var(--color-primary) 0.01em solid;
   padding: 0.1em;
