@@ -3,6 +3,7 @@ title: "In Favor of Inconvenience"
 slug: in-favor-of-inconvenience
 author: HypnoticOcelot
 datetime: 2026-11-03T21:52:16.770Z
+timezone: America/Detroit
 description: "It might seem conterintuitive! (BOLF Blogvember #3)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',

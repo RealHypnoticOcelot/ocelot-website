@@ -28,7 +28,7 @@ export const getPost = async (params: RouteParams<any>) => {
   }
   if (posts.length > 1) { // If more than one post exists under the same slug, return the one with the matching date
     for (const post of posts) {
-      const postDate = formatDate(post.metadata.datetime);
+      const postDate = formatDate(post.metadata.datetime, post.metadata.timezone);
       const paramsDate = formatDate(`${params.year}/${params.month}/${params.day}`);
       if (postDate.YMD == paramsDate.YMD) {
         posts = [post];

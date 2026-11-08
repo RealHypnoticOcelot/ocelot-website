@@ -169,10 +169,10 @@ thead, blockquote, mark {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
 }
-thead :any-link, blockquote :any-link, mark :any-link {
+:is(thead, blockquote, mark) :any-link {
   color: var(--bg-primary);
 }
-thead *::selection, blockquote *::selection, mark::selection, mark *::selection {
+:is(thead, blockquote, mark) *::selection, mark::selection {
   background-color: var(--color-primary);
   color: var(--bg-secondary);
 }
@@ -186,7 +186,7 @@ blockquote, aside {
   margin: auto;
   padding: 1em;
 }
-blockquote > *, aside > * {
+:is(blockquote, aside) > * {
   margin: 0;
 }
 aside {

@@ -3,6 +3,7 @@ title: "Social Media: A Privately-Held Public Good"
 slug: social-media-a-privately-held-public-good
 author: HypnoticOcelot
 datetime: 2026-11-08T04:38:04.136Z
+timezone: America/Detroit
 description: "Should companies control the means of communication? (BOLF Blogvember #7)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',

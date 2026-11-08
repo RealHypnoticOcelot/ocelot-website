@@ -8,7 +8,7 @@ import { siteTitle, siteDescription, siteShortDescription } from "$lib/config";
 export const load: PageLoad = async ({ params }) => {
   try {
     const post = await getPost(params);
-    const postDate = formatDate(post.metadata.datetime);
+    const postDate = formatDate(post.metadata.datetime, post.metadata.timezone);
     const paramsDate = formatDate(`${params.year}/${params.month}/${params.day}`)
     if (postDate.YMD != paramsDate.YMD) {
       redirect(301, `/blog/${postDate.YMD}/${params.slug}`)

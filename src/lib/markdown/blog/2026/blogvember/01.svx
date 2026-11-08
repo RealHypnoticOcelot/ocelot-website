@@ -3,6 +3,7 @@ title: "Beginning BOLF Blogvember"
 slug: beginning-bolf-blogvember
 author: HypnoticOcelot
 datetime: 2026-11-03T16:46:07.336Z
+timezone: America/Detroit
 description: "I'm a little late to this month-long writing challenge! (BOLF Blogvember #1)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',

@@ -40,7 +40,7 @@
   <a href={post.slug}>
     <div class="post">
       <strong>{post.title ?? "[NO TITLE]"}</strong>
-      <em><time datetime={post.updated ?? post.datetime}>{formatDate(post.updated ?? post.datetime, true).YMD}</time></em>
+      <em><time datetime={post.datetime}>{formatDate(post.datetime, post.timezone).YMD}</time></em>
       <br>
       <p>{post.description ?? "[NO DESCRIPTION]"}</p>
     </div>

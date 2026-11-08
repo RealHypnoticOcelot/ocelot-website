@@ -4,6 +4,7 @@ slug: spacehey-and-accessibility
 author: HypnoticOcelot
 datetime: 2026-11-06T18:31:15.196Z
 updated: 2026-11-06T23:40:54.301Z
+timezone: America/Detroit
 description: "The old web wasn't all that accessible! (BOLF Blogvember #6)"
 license: {
 	licenseName: 'CC-BY-SA 4.0',
