@@ -1,0 +1,23 @@
+---
+title: "Social Media: A Privately-Held Public Good"
+slug: social-media-a-privately-held-public-good
+author: HypnoticOcelot
+datetime: 2026-11-08T04:38:04.136Z
+description: "Should companies control the means of communication? (BOLF Blogvember #7)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **50 words**.* 
+
+</aside>
+
+Social media is a public good, in the sense that it provides a benefit(access to information and public discourse) to those who use it, and in that its continued existence depends upon people using and posting to it(see also the [network effect](https://en.wikipedia.org/wiki/Network_effect)). All major social media platforms, though, are owned and operated by private companies, which aren't obligated have to have consumer interests in mind!
+
+(I would write more, but I don't have time today. Continued tomorrow!)
