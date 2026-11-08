@@ -30,5 +30,5 @@
 </style>
 
 <header>
-	<p><strong>This page was accessed on {formatDate(date, true).dateString}</strong></p>
+	<p><strong>This page was accessed on {formatDate(date).dateString}</strong></p>
 </header>

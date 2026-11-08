@@ -1,0 +1,26 @@
+---
+title: "Online Platforms: Privately-Held Public Goods"
+slug: online-platforms-privately-held-public-goods
+author: HypnoticOcelot
+datetime: 2026-11-08T22:28:25.287Z
+timezone: America/Detroit
+description: "Should companies control the means of communication? (BOLF Blogvember #8)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **55 words**.* 
+
+</aside>
+
+Private companies, under neoliberalism and free-market capitalism, are obligated only to "grow", in the sense that they must deliver returns to shareholders at all costs. This means that companies are only beholden to their customers to the extent that they must in order to retain those customers, and thus why monopolies are so powerful: in a market without competitors (or at least viable competitors), companies can take advantage of their customer base with little consequence. We see this process on online platforms through "[enshittification](https://en.wikipedia.org/wiki/Enshittification)", a term popularized by [Cory Doctorow](https://craphound.com/bio/), wherein online platforms slowly become more user-hostile after acquiring a significant user base.
+
+It's also worth considering that these online platforms exist in their current form due to gaps in regulation, and the failure to enshrine meaningful consumer protections in the digital age. Therefore, online platforms are also incentivized to align themselves with conservative policy leaders that will allow online platforms to continue extracting capital from their customers in the ways they do; these platforms align themselves with these policy leaders through means such as financial contributions, deregulation lobbying, and even geopolitical interferences(see how Elon Musk [deliberately capped Starlink speeds in Ukraine](https://www.wsj.com/world/ukraine-starlink-elon-musk-trump-dbc49193)). It's not improbable (nor implausible) to conceive that these companies could also play a role in the dissemination of misinformation or propaganda that perpetuates the system that these companies benefit from the existence of.
+
+Clearly, these problems stem from a gross excess of power wielded by individuals as a result of mass exploitation under free-market capitalism. Tech oligarchs hold extreme influence, politically and otherwise, and are incompatible with a free and equitable society. Barring a total realignment of the American political and economic system, what can we do? The two answers I will be addressing(in the next two Blogvember posts) will be federation and non-profit governance. Look forward to them!

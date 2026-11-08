@@ -1,13 +1,13 @@
 <script>
   let { data } = $props();
   import { formatDate } from '$lib/utils/formatDate';
-  import { siteAuthor, siteTextLicense, siteTitle } from '$lib/config.js';
+  import { siteAuthor } from '$lib/config.js';
   import { onMount } from 'svelte';
   let timezone = $state(false)
   onMount(async() => {
     timezone = true;
-  }) // This code will only run if the user has JS enabled.
-  // Timezone being true will pass null to the formatDate code,
+  }) // This code will only run if the user has JS enabled (see https://svelte.dev/docs/kit/faq#How-do-I-use-a-client-side-library-accessing-document-or-window).
+  // Timezone being true will pass null  to the formatDate code,
   // and so the date string will convert to the user's timezone.
 </script>
 

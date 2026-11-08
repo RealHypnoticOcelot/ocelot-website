@@ -234,7 +234,6 @@ main img {
 feed > * {
   display: grid;
   align-content: center;
-  width: var(--content-width);
   background-color: var(--default-background);
   margin: var(--default-margin);
   padding: var(--default-padding);
