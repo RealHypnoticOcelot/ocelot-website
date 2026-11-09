@@ -1,0 +1,34 @@
+---
+title: "Federation and Social Platforms"
+slug: federation-and-social-platforms
+author: HypnoticOcelot
+datetime: 2026-11-09T22:23:57.043Z
+timezone: America/Detroit
+description: "Is federation viable for social platforms? (BOLF Blogvember #9)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **60 words**.* 
+
+</aside>
+
+How do social platforms work with federation? First, we should start by describing what federation actually is. Federation is a way to architect platforms that have no centralized authority. Federated platforms are interoperable, and can communicate with other instances that use the same standards and protocols. [Mastodon](https://joinmastodon.org/), for example, is one of the more popular federated platforms; anybody can run their own Mastodon server, which can communicate with other Mastodon servers. Two Mastodon servers don't need to share the same underlying code—one server could be written in Python, for example, and another in Rust—as long as they communicate to each other the same way.
+
+At first sight, this sounds great(and it is)! But federation has a lot of hidden complexity that must be considered. Although federation addresses the [network effect](https://en.wikipedia.org/wiki/Network_effect) by making platform choice agnostic(you can choose what server you want to sign up to, and what client you want to use to access the platform; the goal is that you can easily swap at any time), the development of the protocol still depends upon a capable organization that can make and change standards for future protocol development, especially with consideration to the desires of platform hosters and users. If an organization fails to respond to these desires, it may be that different implementations of features will be created that harm interoperability between instances([Matrix](https://matrix.org) has many differing implementations of profile banners, for instance).
+
+Because anybody can create an implementation of an open-standard federation protocol, special attention must be given to security. Unless encryption and security is enshrined within a protocol(and this can cause problems for new features), server implementations may vary in terms of security guarantees, and as the saying goes, <q cite="https://en.wiktionary.org/wiki/a_chain_is_only_as_strong_as_its_weakest_link" title="Thomas Reid - Essays on the Intellectual Powers of Man (1786)">the chain is only as strong as its weakest link</q>. Standards must be created that provide strong platform-wide guarantees for security, while remaining adaptable to the ever-evolving security landscape.
+
+(Contemporary) regulation also plays a factor in the existence of federated platforms. In our (nightmare and hellish) situation wherein the only regulation being passed in cyberspace is mandatory age verification, this regulation creats an outsized effect upon smaller/burgeoning online platforms. Platforms are forced to either comply with burdensome verification requirements(often through shady age verification companies), or cease operations entirely within a region(Small platform [SpaceHey](https://spacehey.com/) has taken this route). Regulation can be good, of course, but in this case it imposes a requirement that not only effectively kills smaller competition, but kills the tenets the internet has been founded upon. *There is no privacy-preserving age verification method*.
+
+As security can vary between instances, so too can moderation. How can individual platforms federate with other platforms that may differ in terms of moderation policies? Mastodon addresses the issue by having moderation actions localized to the instance the action was taken on, whereas [Bluesky](https://bsky.social/) allows users to select the "moderation services" they want to subscribe to; these moderation services make moderation actions independent from actual instances, so that users can control how they want their feeds to be moderated.
+
+Perhaps the most important consideration to make about federated services is ease-of-use; most users don't want to fiddle with instances or moderation or the like! To the average user, federated platforms need to work as seamlessly as non-federated platforms, and thus the aspects of federation must be abstracted away or hidden as "advanced options"(the careless manner in which people engage in technology use is an issue that warrants its own article). Mastodon and Bluesky abstract away the concept of instances by having "default" instances that the vast majority of people use. I fail to see a viable alternative to this; ultimately, one instance or another is bound to gain favor among the majority of individuals, be it run by the standards organization or not.
+
+So, is federation worth it? I'm not sure! Since proper and seamless federation requires an actively-involved standards organization, it's hard to determine how "decentralized" federation really is. Maybe the goal is less-so decentralization, and more-so sovereignty: the ability to manage your data yourself, or choose an entity you trust to do it for you. As long as it's simple and painless to change instances, federation is good! There are very, very many technical hurdles that decentralization faces, but at the very least, a federated platform is (at least conceptually) better than a non-federated platform any day of the week, because interoperability is beneficial to end-users.

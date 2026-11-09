@@ -165,6 +165,9 @@ table * {
   padding: 1em;
   text-align: center;
 }
+main q[title] { /* Quotes with titles in the main body */
+  text-decoration: underline dotted;
+}
 thead, blockquote, mark {
   background-color: var(--color-highlight);
   color: var(--bg-primary);
