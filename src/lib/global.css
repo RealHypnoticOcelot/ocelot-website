@@ -19,7 +19,7 @@
   --content-width: min(60em, 100dvw);
   --default-margin: 0.5em auto 0.5em auto;
   --default-padding: 1em 2em 1em 2em;
-  --default-background: color(from var(--bg-primary) srgb r g b  / 0.9);
+  --default-background: color(from var(--bg-primary) srgb r g b  / 0.95);
   --default-font: "Liberation Sans", "Helvetica Neue", "Noto Sans", "Open Sans", sans-serif;
   --box-shadow: 0.1em 0.1em 0.5em var(--color-shadow);
   scrollbar-color: var(--color-highlight) var(--bg-primary);
