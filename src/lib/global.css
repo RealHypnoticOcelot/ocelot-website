@@ -90,7 +90,6 @@ ul ul {
 }
 :any-link {
   color: var(--color-highlight);
-  white-space: nowrap;
 }
 /*
 For some reason, the computed color (at least in Firefox) of text-decorated
@@ -225,7 +224,7 @@ main img {
     border: none;
     overflow: hidden;
   }
-  main a:after {
+  main :any-link:after {
     content: " ("attr(href)")";
     white-space: normal; /* If not set, content overflows off the page */
   }

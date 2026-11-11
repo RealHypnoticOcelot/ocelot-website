@@ -1,0 +1,26 @@
+---
+title: "Online Anonymity and Free Speech"
+slug: online-anonymity-and-free-speech
+author: HypnoticOcelot
+datetime: 2026-11-11T20:50:35.286
+timezone: America/Detroit
+description: "Privacy is a human right! (BOLF Blogvember #11)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **70 words**.* 
+
+</aside>
+
+In 1996, John Perry Barlow published the [Declaration of the Independence of Cyberspace](https://www.eff.org/cyberspace-independence), a manifesto asserting cyberspace to be independent from all sovereign powers; no one person or country could control the internet. In cyberspace, all people would be of equal disposition, and have the ability to freely express themselves. A lot has changed since 1996! The "corporate web" is the main manner in which people use the internet, countries [impose restrictions upon internet access](https://torrentfreak.com/dns-resolver-quad9-will-leave-france-after-court-orders-piracy-blocking-penalty/), and as is the topic of this blog post, online anonymity is increasingly under threat.
+
+I've (briefly) [mentioned before](/blog/2026/11/09/federation-and-social-platforms#:~:text=%28Contemporary,method%2E) how today, online age verification legislation has become more and more widespread. This legislation not only threatens the idea of cyberspace that Barlow describes, it necessarily has a profoundly chilling effect upon free speech on the whole. Anonymity and pseudonymity are inextricable from freedom; free expression must not come with the risk of potential retaliation(in terms of physical retaliation; social punishment is a risk that all speech must face). Without the right to privacy, [immigrants must disclose their social media identifiers](https://www.eff.org/deeplinks/2024/02/eff-dc-circuit-us-governments-forced-disclosure-visa-applicants-social-media) and [private companies surveil every driver on the road](https://www.eff.org/deeplinks/2026/09/high-crime-lmao-how-cops-are-treating-mass-surveillance-joke).
+
+Since the advent of computers, the ability to automatically collect and categorize information has become exponentially easier; [ALPRs](https://en.wikipedia.org/wiki/Automatic_number-plate_recognition), for example, couldn't have existed in 1960, because the mechanism to track people at such scale was simply nonexistent. This makes salient the existence of privacy as a human right. Collecting, aggregating, and making conclusions from data points is easier than it's ever been. Until privacy—and by extension anonymity/pseudonymity—become enshrined as an inalienable right, people will continue to be exploited by their mere existence, online or in other spaces that employ surveillance technology.
