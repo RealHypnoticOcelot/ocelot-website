@@ -1,0 +1,32 @@
+---
+title: "Non-profits and Social Platforms"
+slug: non-profits-and-social-platforms
+author: HypnoticOcelot
+datetime: 2026-11-11T00:03:10.090Z
+timezone: America/Detroit
+description: "Should social platforms be non-profits? (BOLF Blogvember #10)"
+license: {
+	licenseName: 'CC-BY-SA 4.0',
+	licenseLink: 'https://creativecommons.org/licenses/by-sa/4.0/',
+	author: HypnoticOcelot,
+	modified: false,
+	creditLink: "",
+}
+---
+<aside>
+
+*This post is part of the [BOLF Blogvember challenge](https://blog.spacehey.com/entry?id=2251917). Today, the word minimum is **65 words**.* 
+
+</aside>
+
+Like I've said before, social platforms [are a public good](/blog/2026/11/07/privately-owned-social-media), and yet they're owned by private companies, which have [little obligation](/blog/2026/11/08/online-platforms-privately-held-public-goods) towards the users of their platforms. So, what would obligate(or at least incentivize) social platforms to have their users' best interests in mind? The answer, certainly, is not private ownership, and state-run ownership also holds an inherent bias towards the state(unless, somehow, a social media platform and infrastructure was managed by an independent government-funded organization; I imagine maintaining impartiality would pose too much of a challenge, at least for our contemporary American government), so where is the answer?
+
+[Bluesky](https://bsky.social/) exists as a "[public benefit corporation](https://en.wikipedia.org/wiki/Benefit_corporation)", which as far as I can tell, is just a [bluewashed](https://en.wikipedia.org/wiki/Bluewashing) way of describing a private company. A public benefit corporation is effectively the same as a normal private company, but they are required to "consider" public benefit goals alongside profit motives. As noble as such an endeavor may be, the unfortunate truth is that these concepts are incompatible under neoliberal free-market capitalism; there comes a point where shareholder value cannot be increased without sacrificing public benefit.
+
+Non-profits could be a solution! Since a non-profit is only obligated to provide some service, without promising some return to investors or the like, this means that online platforms run by non-profits are inherently user-aligned. The [WikiMedia Foundation](https://en.wikipedia.org/wiki/Wikimedia_Foundation), for instance, is a non-profit that runs Wikipedia alongside a multitude of other wikis that depends upon user contribution. Wikipedia doesn't have advertisements, or [dark patterns](https://en.wikipedia.org/wiki/Dark_pattern), or [binding arbitration](https://en.wikipedia.org/wiki/Arbitration) agreements, because its existence is reliant upon its users(and donations)! [The Internet Archive](https://archive.org/about/) is another online service that exists as a non-profit, and the same goes for it.
+
+The problem, of course, is money; the WikiMedia Foundation and Internet Archive both constantly nag their users for donations. Although these particular organizations are able to stay afloat this way, it couldn't be said whether this fact can be extrapolated to all non-profit online platforms with a significant user base; it may be that certain types of platforms simply cost more than enough people are willing to pay.
+
+What is certain is that online platforms such as social media should not require payment, as this would severely affect the expression of free speech online. Not only that, but requiring users to pay forces them to sign up for a payment method that can be used digitally, such as a credit or debit card(unless, like [Mullvad](https://mullvad.net/), you accept cash mail in the mail); people should not have to take part in private systems(e.g. credit card companies) in order to engage with public speech.
+
+Though I couldn't tell you whether non-profits are the very best way for online platforms to operate(under the American political and economic system), it's by far not the worst way to go about it! Especially so if a non-profit organization works on the creation of a [federated](/blog/2026/11/09/federation-and-social-platforms) platform, as this limits the amount of power the organization can actually have(to an extent) and thus limits potential corruption within the organization.
